@@ -1,0 +1,747 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stuga Studio - Professional UI Tools & Video Creators | Free Online Tools</title>
+<meta name="description" content="Stuga Studio offers professional UI tools for creating stunning videos, animations, and web content. Free online tools including Card Studio, Reel Studio, Countdown Studio, and more.">
+<meta name="keywords" content="UI tools, video creator, animation studio, online video editor, professional tools, free video tools, web design tools">
+<meta name="author" content="Stuga Studio">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Stuga Studio - Professional UI Tools & Video Creators">
+<meta property="og:description" content="Professional UI tools for creating stunning videos, animations, and web content. Free online tools for creators.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stuga.studio">
+<meta property="og:image" content="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stuga Studio - Professional UI Tools">
+<meta name="twitter:description" content="Professional UI tools for creating stunning videos and animations">
+<meta name="twitter:image" content="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
+<link rel="canonical" href="https://stuga.studio">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Stuga Studio",
+  "description": "Professional UI tools for creating stunning videos, animations, and web content. Free online tools for creators.",
+  "url": "https://stuga.studio",
+  "creator": {
+    "@type": "Organization",
+    "name": "Stuga Studio"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://stuga.studio/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "mainEntity": {
+    "@type": "SoftwareApplication",
+    "name": "Stuga Studio Tools",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #1a1a1a;
+  --cream: #f7f7f7;
+  --paper: #f7f7f7;
+  --red: #ff3c00;
+  --green: #ff3c00;
+  --mint: #ff3c00;
+  --muted: rgba(26, 26, 26, 0.58);
+  --radius: 18px;
+  --gap: 14px;
+}
+html { min-height: 100%; background: var(--ink); }
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(247,247,247,0.05), transparent 28%),
+    var(--ink);
+  color: var(--ink);
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  padding: clamp(10px, 2vw, 28px);
+  padding-top: 100px;
+}
+a { color: inherit; text-decoration: none; }
+.bento-shell {
+  width: 100%;
+  min-height: calc(100vh - clamp(20px, 4vw, 56px));
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(112px, 1fr));
+  grid-auto-rows: minmax(112px, 1fr);
+  gap: var(--gap);
+  padding: var(--gap);
+  background: var(--ink);
+  border: 2px solid rgba(247,247,247,0.08);
+  border-radius: 26px;
+  box-shadow: 0 24px 80px rgba(26,26,26,0.45);
+}
+.tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  min-height: 132px;
+  padding: clamp(18px, 2.6vw, 38px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  isolation: isolate;
+  outline: 0 solid rgba(247,247,247,0);
+  transition: transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1), outline-color 280ms ease, filter 280ms ease, box-shadow 280ms ease;
+  cursor: pointer;
+}
+.tile:hover {
+  transform: translateY(-6px) scale(1.02);
+  outline: 3px solid rgba(247,247,247,0.22);
+  filter: saturate(1.1) brightness(1.05);
+  box-shadow: 0 20px 40px rgba(26,26,26,0.15);
+}
+.tile:hover .faces {
+  animation: float 3s ease-in-out infinite;
+}
+.tile:hover .face {
+  animation: bounce 2s ease-in-out infinite;
+}
+.tile:hover .face:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.tile:hover .face:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.tile:hover .handshake {
+  animation: shake 0.5s ease-in-out infinite;
+}
+.tile:hover .shake-lines {
+  animation: rotate 4s linear infinite;
+}
+.tile:hover .people {
+  animation: wave 2s ease-in-out infinite;
+}
+.tile:hover .person {
+  animation: dance 1.5s ease-in-out infinite;
+}
+.tile:hover .person:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.tile:hover .person:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.tile:hover .bubble {
+  animation: pop 1s ease-in-out infinite;
+}
+.tile:hover .bubble.out {
+  animation-delay: 0.5s;
+}
+.tile:hover .avatar {
+  animation: pulse 2s ease-in-out infinite;
+}
+.tile:hover .avatar.active {
+  animation-delay: 0.3s;
+}
+.tile:hover .sync-word {
+  animation: glow 2s ease-in-out infinite;
+}
+.tile:hover .mini-card {
+  animation: flip 3s ease-in-out infinite;
+}
+.tile:hover .title {
+  animation: slide 2s ease-in-out infinite;
+}
+.tile:focus-visible {
+  outline: 4px solid var(--red);
+}
+.tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(26,26,26,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,26,26,0.08) 1px, transparent 1px);
+  background-size: 18px 18px;
+  mix-blend-mode: multiply;
+}
+.cream { background: var(--cream); }
+.paper { background: var(--paper); }
+.red { background: var(--red); color: var(--paper); }
+.green { background: var(--green); color: var(--paper); }
+.dark { background: #1a1a1a; color: var(--paper); border: 1px solid rgba(247,247,247,0.1); }
+.hero { grid-column: 1 / 5; grid-row: 1 / 3; }
+.screen { grid-column: 5 / 7; grid-row: 1 / 3; }
+.reel { grid-column: 1 / 3; grid-row: 3 / 5; }
+.sync { grid-column: 3 / 5; grid-row: 3 / 4; }
+.showreel { grid-column: 5 / 7; grid-row: 3 / 6; }
+.countdown { grid-column: 1 / 3; grid-row: 5 / 6; }
+.slideshow { grid-column: 3 / 5; grid-row: 4 / 6; }
+.eyebrow {
+  font-family: "Roboto Mono", monospace;
+  font-size: clamp(10px, 1vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.title {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(38px, 8vw, 112px);
+  line-height: 0.88;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  max-width: 780px;
+}
+.title-mid { font-size: clamp(34px, 5vw, 70px); line-height: 0.9; }
+.title-small { font-size: clamp(28px, 3.5vw, 48px); line-height: 0.9; }
+.meta {
+  font-family: "Roboto Mono", monospace;
+  font-size: clamp(11px, 1.1vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 2;
+}
+.muted { color: var(--muted); }
+.red .muted, .green .muted, .dark .muted { color: rgba(247,247,247,0.72); }
+.hero .title { color: var(--red); display: grid; grid-template-columns: auto auto; gap: 0 26px; align-items: end; }
+.hero .title span:nth-child(1) { grid-column: 1 / 3; }
+.hero .title span:nth-child(2) { grid-column: 1; }
+.hero .title span:nth-child(3) { grid-column: 2; }
+.faces {
+  position: absolute;
+  right: 8%;
+  top: 18%;
+  display: flex;
+  gap: 14px;
+  z-index: 2;
+}
+.face {
+  width: clamp(42px, 5vw, 72px);
+  aspect-ratio: 1;
+  border: 4px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+  position: relative;
+}
+.face::before, .face::after {
+  content: "";
+  position: absolute;
+  top: 36%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.face::before { left: 30%; }
+.face::after { right: 30%; }
+.face i {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  bottom: 24%;
+  height: 8px;
+  border-bottom: 3px solid var(--ink);
+  border-radius: 50%;
+}
+.face.red-hair { box-shadow: inset -12px 0 0 #ff3c00; }
+.face.green-hair { box-shadow: inset 0 14px 0 var(--red); }
+.handshake {
+  position: absolute;
+  inset: 18px;
+  z-index: 1;
+}
+.handshake::before, .handshake::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 28%;
+  border: 8px solid var(--paper);
+  border-radius: 999px 999px 28px 28px;
+  transform-origin: center;
+}
+.handshake::before { left: -22%; top: 12%; transform: rotate(38deg); }
+.handshake::after { right: -18%; top: 34%; transform: rotate(-142deg); }
+.shake-lines {
+  position: absolute;
+  inset: 12%;
+  border: 4px solid var(--red);
+  border-left: 0;
+  border-bottom: 0;
+  border-radius: 50%;
+  transform: rotate(-18deg);
+  opacity: 0.9;
+}
+.mini-card {
+  width: min(78%, 250px);
+  aspect-ratio: 0.85;
+  border-radius: 28px;
+  background: var(--paper);
+  color: var(--red);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 0 2px rgba(26,26,26,0.08);
+}
+.mini-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+.sync-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 100%;
+}
+.sync-logo {
+  width: 62px;
+  height: 48px;
+  background: var(--red);
+  border-radius: 0 22px 22px 0;
+  position: relative;
+}
+.sync-logo::before {
+  content: "";
+  position: absolute;
+  inset: 0 22px 0 -1px;
+  background: var(--paper);
+  border-radius: 0 22px 22px 0;
+}
+.sync-word {
+  color: var(--red);
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 900;
+  line-height: 0.8;
+}
+.people {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: -7%;
+  height: 42%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8%;
+  z-index: 2;
+}
+.person {
+  width: 26%;
+  max-width: 110px;
+  height: 100%;
+  border: 5px solid var(--ink);
+  border-bottom: 0;
+  border-radius: 44px 44px 0 0;
+  background: var(--paper);
+  position: relative;
+}
+.person::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 22%;
+  right: 22%;
+  height: 8px;
+  border-bottom: 4px solid var(--ink);
+  border-radius: 50%;
+}
+.person:nth-child(1) { background: #ff3c00; }
+.person:nth-child(2) { height: 112%; }
+.person:nth-child(3) { background: var(--red); }
+.bubble {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-family: "Roboto Mono", monospace;
+  font-size: clamp(12px, 1.3vw, 16px);
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+.bubble.in { background: var(--red); color: var(--paper); align-self: flex-start; }
+.bubble.out { background: var(--red); color: var(--red); align-self: flex-end; margin-top: 8px; }
+.avatar-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.avatar {
+  width: clamp(44px, 4.5vw, 70px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 3px solid rgba(247,247,247,0.6);
+  position: relative;
+}
+.avatar::before, .avatar::after {
+  content: "";
+  position: absolute;
+  top: 38%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.avatar::before { left: 31%; }
+.avatar::after { right: 31%; }
+.avatar.active { background: var(--red); outline: 4px solid rgba(247,247,247,0.35); }
+.mono-chip {
+  align-self: center;
+  background: #1a1a1a;
+  color: var(--paper);
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-family: "Roboto Mono", monospace;
+  font-size: clamp(13px, 1.2vw, 18px);
+  box-shadow: 0 8px 0 rgba(26,26,26,0.14);
+  position: relative;
+  z-index: 2;
+}
+.tool-line {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+.pill {
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+}
+
+/* Header and Navbar Styles */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(247, 247, 247, 0.1);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  max-width: 100%;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-brand .stuga-logo {
+  width: 62px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: contain;
+  background: transparent;
+}
+.brand-text {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #f7f7f7;
+  letter-spacing: 0.02em;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav-link {
+  font-family: "Roboto Mono", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(247, 247, 247, 0.8);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+.nav-link:hover {
+  color: #ff3c00;
+}
+
+/* Continuous microinteractions */
+.faces {
+  animation: float 4s ease-in-out infinite;
+}
+.face {
+  animation: bounce 3s ease-in-out infinite;
+}
+.face:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.face:nth-child(3) {
+  animation-delay: 1s;
+}
+.handshake {
+  animation: shake 3s ease-in-out infinite;
+}
+.shake-lines {
+  animation: rotate 8s linear infinite;
+}
+.people {
+  animation: wave 3s ease-in-out infinite;
+}
+.person {
+  animation: dance 2s ease-in-out infinite;
+}
+.person:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.person:nth-child(3) {
+  animation-delay: 1s;
+}
+.bubble {
+  animation: pop 2s ease-in-out infinite;
+}
+.bubble.out {
+  animation-delay: 1s;
+}
+.avatar {
+  animation: pulse 3s ease-in-out infinite;
+}
+.avatar.active {
+  animation-delay: 0.5s;
+}
+.sync-word {
+  animation: glow 3s ease-in-out infinite;
+}
+.mini-card {
+  animation: flip 4s ease-in-out infinite;
+}
+.title {
+  animation: slide 3s ease-in-out infinite;
+}
+
+/* Keyframe animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+@keyframes rotate {
+  from { transform: rotate(-18deg); }
+  to { transform: rotate(342deg); }
+}
+@keyframes wave {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(-2deg); }
+  75% { transform: translateY(3px) rotate(2deg); }
+}
+@keyframes dance {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(-3deg); }
+  50% { transform: translateY(0px) rotate(3deg); }
+  75% { transform: translateY(-5px) rotate(0deg); }
+}
+@keyframes pop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 5px rgba(255,60,0,0.5); }
+  50% { text-shadow: 0 0 20px rgba(255,60,0,0.8), 0 0 30px rgba(255,60,0,0.6); }
+}
+@keyframes flip {
+  0%, 100% { transform: rotateY(0deg); }
+  50% { transform: rotateY(5deg); }
+}
+@keyframes slide {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(3px); }
+}
+
+@media (max-width: 980px) {
+  body { padding: 10px; }
+  .bento-shell {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: minmax(170px, auto);
+    border-radius: 20px;
+  }
+  .tile { grid-column: span 1; grid-row: span 1; }
+  .hero, .showreel { grid-column: span 2; grid-row: span 2; }
+  .screen, .reel, .slideshow { grid-column: span 1; grid-row: span 2; }
+  .faces { right: 5%; top: 10%; transform: scale(0.78); transform-origin: top right; }
+}
+@media (max-width: 620px) {
+  .bento-shell { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: minmax(180px, auto); }
+  .tile, .hero, .screen, .reel, .sync, .showreel, .countdown, .slideshow, .card-studio {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .hero { min-height: 330px; }
+  .showreel { min-height: 360px; }
+  .title { font-size: clamp(46px, 17vw, 82px); }
+}
+
+/* Stuga minimalist theme */
+:root {
+  --ink: #1a1a1a;
+  --cream: #f7f7f7;
+  --paper: #f7f7f7;
+  --red: #ff3c00;
+  --green: #ff3c00;
+  --mint: #ff3c00;
+  --muted: rgba(26, 26, 26, 0.58);
+  --radius: 8px;
+}
+body { background: #f7f7f7; color: #1a1a1a; }
+.bento-shell { background: #1a1a1a; border-color: #1a1a1a; box-shadow: none; }
+.tile { border-radius: 8px; box-shadow: none; outline-offset: 0; }
+.tile::after { opacity: 0; }
+.tile:hover { transform: translateY(-2px); outline-color: #ff3c00; filter: none; }
+.face,
+.person,
+.avatar,
+.mini-card,
+.bubble,
+.mono-chip { box-shadow: none; border-color: #1a1a1a; border-radius: 8px; }
+.pill { border-color: currentColor; border-radius: 999px; }
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png" alt="Stuga Studio" class="stuga-logo">
+    </div>
+    <div class="nav-menu">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+  </nav>
+</header>
+
+<main class="bento-shell" aria-label="Stuga UI tools">
+  <a class="tile hero cream" href="project-teaser-studio.html" aria-label="Open Project Teaser Studio">
+    <div class="eyebrow">Stuga / Project Teaser</div>
+    <h1 class="title">
+      <span>better</span>
+      <span>now</span>
+      <span>closer</span>
+    </h1>
+    <div class="faces" aria-hidden="true">
+      <span class="face"><i></i></span>
+      <span class="face green-hair"><i></i></span>
+      <span class="face red-hair"><i></i></span>
+    </div>
+    <div class="tool-line">
+      <span class="pill">promos</span>
+      <span class="pill">custom canvas</span>
+      <span class="pill">50 images</span>
+    </div>
+  </a>
+
+  <a class="tile screen green" href="screen-reel-studio.html" aria-label="Open Screen Reel Studio">
+    <div class="eyebrow">Screen Reel</div>
+    <div class="handshake" aria-hidden="true"><span class="shake-lines"></span></div>
+    <div class="meta">website and app screens in motion</div>
+  </a>
+
+  <a class="tile reel red" href="reel-studio.html" aria-label="Open Reel Studio">
+    <div class="mini-card">
+      <div class="mini-row"><span>24 Mar</span><span>09:00-10:00</span></div>
+      <div class="title-small">Reel<br>Adaptation</div>
+      <div class="meta">story grooming</div>
+    </div>
+    <div class="meta">vertical, square, or any canvas</div>
+  </a>
+
+  <a class="tile sync paper" href="card-studio.html" aria-label="Open Card Studio">
+    <div class="sync-mark">
+      <span class="sync-logo" aria-hidden="true"></span>
+      <span class="sync-word">card</span>
+    </div>
+  </a>
+
+  <a class="tile showreel paper" href="showreel-studio.html" aria-label="Open Showreel Studio">
+    <div>
+      <div class="title-mid" style="color:var(--red)">Bring People<br>Together</div>
+      <div class="meta" style="color:var(--red); margin-top:18px">[ showreel.com ]</div>
+    </div>
+    <div class="people" aria-hidden="true">
+      <span class="person"></span>
+      <span class="person"></span>
+      <span class="person"></span>
+    </div>
+  </a>
+
+  <a class="tile countdown cream" href="countdown-studio.html" aria-label="Open Countdown Studio">
+    <div class="bubble in">Hi! Where are you?</div>
+    <div class="bubble out">I'll be in touch</div>
+    <div class="meta muted">Countdown Studio</div>
+  </a>
+
+  <a class="tile slideshow green" href="slideshow-loop-studio.html" aria-label="Open Slideshow Loop Studio">
+    <div class="mono-chip">I'll be in touch</div>
+    <div class="avatar-row" aria-hidden="true">
+      <span class="avatar"></span>
+      <span class="avatar active"></span>
+      <span class="avatar"></span>
+    </div>
+    <div class="meta">looping photo stories</div>
+  </a>
+</main>
+<script>
+document.querySelectorAll('.tile').forEach((tile, index) => {
+  tile.style.opacity = '0';
+  tile.style.transform = 'translateY(16px)';
+  requestAnimationFrame(() => {
+    tile.style.transition = 'opacity 420ms ease, transform 420ms ease, outline-color 180ms ease, filter 180ms ease';
+    setTimeout(() => {
+      tile.style.opacity = '1';
+      tile.style.transform = '';
+    }, index * 55);
+  });
+});
+</script>
+</body>
+</html>

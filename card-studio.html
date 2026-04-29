@@ -1,0 +1,965 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card Studio — Animated Card Gallery | Create Stunning Video Reels</title>
+<meta name="description" content="Create beautiful animated card galleries and video reels with Card Studio. Perfect for social media, portfolios, and presentations. No software download required.">
+<meta name="keywords" content="animated cards, video reel creator, card gallery, social media video, portfolio animation, online video editor">
+<meta name="author" content="Stuga Studio">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Card Studio — Animated Card Gallery | Create Stunning Video Reels">
+<meta property="og:description" content="Create beautiful animated card galleries and video reels online. Perfect for social media, portfolios, and presentations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stuga.studio/card-studio">
+<meta property="og:image" content="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Card Studio — Animated Card Gallery">
+<meta name="twitter:description" content="Create beautiful animated card galleries and video reels online">
+<meta name="twitter:image" content="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
+<link rel="canonical" href="https://stuga.studio/card-studio">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Card Studio — Animated Card Gallery",
+  "description": "Create beautiful animated card galleries and video reels with Card Studio. Perfect for social media, portfolios, and presentations.",
+  "url": "https://stuga.studio/card-studio",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "Stuga Studio"
+  },
+  "featureList": [
+    "Animated card galleries",
+    "Video reel creation",
+    "Social media optimization",
+    "Portfolio presentations",
+    "No software download required"
+  ]
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* Dark mode styles */
+[data-theme="dark"] {
+  --bg: #1a1a1a; --surface: #1a1a1a; --surface2: #1a1a1a;
+  --border: #1a1a1a; --text: #f7f7f7; --muted: #1a1a1a;
+  --accent: #ff3c00; --radius: 10px;
+}
+
+/* Light mode styles */
+[data-theme="light"] {
+  --bg: #f7f7f7; --surface: #f7f7f7; --surface2: #f7f7f7;
+  --border: #f7f7f7; --text: #1a1a1a; --muted: #1a1a1a;
+  --accent: #ff3c00; --radius: 10px;
+}
+body { background: var(--bg); color: var(--text); font-family: 'Roboto', sans-serif; font-size: 13px; letter-spacing: 0.02em; min-height: 100vh; overflow-x: hidden; }
+header { display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; border-bottom: 1px solid var(--border); }
+.logo { display: flex; align-items: center; gap: 12px; }
+.stuga-logo { width: 62px; height: 32px; border-radius: 6px; object-fit: contain; }
+.logo-text { display: flex; flex-direction: column; }
+.logo h1 { font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.logo span { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; }
+.badge { font-size: 10px; color: var(--muted); border: 1px solid var(--border); padding: 3px 8px; border-radius: 20px; letter-spacing: 0.1em; }
+.back-btn { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 8px 16px; border-radius: var(--radius); font-size: 12px; font-weight: 500; text-decoration: none; transition: all 0.2s ease; }
+.back-btn:hover { background: var(--surface2); border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.back-btn i { font-size: 11px; }
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(26,26,26,0.1);
+}
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26,26,26,0.15);
+}
+.theme-toggle i {
+  font-size: 16px;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+.theme-toggle:hover i {
+  color: var(--accent);
+}
+.workspace { display: grid; grid-template-columns: 280px 1fr; height: calc(100vh - 57px); }
+.sidebar { background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow-y: auto; }
+.sidebar-section { padding: 20px; border-bottom: 1px solid var(--border); }
+.sidebar-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+#drop-zone { border: 1.5px dashed var(--border); border-radius: var(--radius); padding: 24px 16px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+#drop-zone:hover, #drop-zone.drag-over { border-color: var(--accent); background: rgba(255,60,0,0.08); }
+#drop-zone .drop-icon { font-size: 28px; margin-bottom: 10px; opacity: 0.5; }
+#drop-zone p { color: var(--muted); line-height: 1.5; font-size: 12px; }
+#drop-zone .btn-upload { display: inline-block; margin-top: 12px; padding: 7px 16px; background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 12px; cursor: pointer; }
+#drop-zone .btn-upload:hover { background: #1a1a1a; }
+#file-input { display: none; }
+#sequence-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; min-height: 50px; }
+.thumb-item { position: relative; aspect-ratio: 16/10; border-radius: 6px; overflow: hidden; background: var(--surface2); cursor: grab; border: 1.5px solid transparent; transition: border-color 0.15s, transform 0.15s; }
+.thumb-item:hover { border-color: var(--border); }
+.thumb-item.dragging { opacity: 0.4; cursor: grabbing; }
+.thumb-item.drag-target { border-color: var(--accent); transform: scale(1.04); }
+.thumb-item img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.thumb-num { position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; background: rgba(26,26,26,0.75); border-radius: 50%; font-size: 9px; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+.thumb-remove { position: absolute; top: 3px; right: 3px; width: 16px; height: 16px; background: rgba(26,26,26,0.75); border-radius: 50%; display: none; align-items: center; justify-content: center; font-size: 11px; cursor: pointer; color: #f7f7f7; }
+.thumb-item:hover .thumb-remove { display: flex; }
+.thumb-placeholder { aspect-ratio: 16/10; border-radius: 6px; border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--border); cursor: pointer; }
+.thumb-placeholder:hover { border-color: #1a1a1a; color: #1a1a1a; }
+.sequence-note { font-size: 11px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+.setting-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.setting-row label { color: var(--muted); font-size: 12px; }
+.setting-row select { background: var(--surface2); border: 1px solid var(--border); border-radius: 5px; color: var(--text); font-size: 11px; padding: 4px 8px; cursor: pointer; }
+.gradient-row { display: flex; align-items: center; gap: 6px; margin-bottom: 12px; }
+.gradient-swatch { width: 22px; height: 22px; border-radius: 5px; cursor: pointer; border: 1.5px solid rgba(247,247,247,0.1); transition: transform 0.1s, border-color 0.1s; flex-shrink: 0; }
+.gradient-swatch:hover { transform: scale(1.15); }
+.gradient-swatch.active { border-color: var(--accent); transform: scale(1.15); }
+.sidebar-actions { padding: 20px; margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
+.btn { width: 100%; padding: 11px 16px; border-radius: 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; cursor: pointer; border: none; transition: background 0.15s, opacity 0.15s, transform 0.1s; }
+.btn:active { transform: scale(0.98); }
+.btn:disabled { opacity: 0.35; cursor: default; }
+.btn-primary { background: var(--accent); color: #1a1a1a; }
+.btn-primary:hover:not(:disabled) { background: #ff3c00; }
+.btn-export { background: linear-gradient(135deg, #ff3c00, #ff3c00); color: #f7f7f7; }
+.btn-export:hover:not(:disabled) { background: linear-gradient(135deg, #1a1a1a, #ff3c00); }
+.main-area { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 28px; position: relative; overflow: hidden; }
+#canvas-container { position: relative; flex-shrink: 0; }
+#canvas-container canvas { display: block; border-radius: 10px; box-shadow: 0 8px 60px rgba(26,26,26,0.6); }
+.controls { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 40px; padding: 8px 16px; }
+.ctrl-btn { background: none; border: none; color: var(--text); cursor: pointer; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; transition: background 0.15s; }
+.ctrl-btn:hover { background: var(--surface2); }
+.ctrl-divider { width: 1px; height: 20px; background: var(--border); }
+.timeline { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+#timeline-scrub { -webkit-appearance: none; appearance: none; width: 140px; height: 3px; background: var(--border); border-radius: 3px; outline: none; cursor: pointer; }
+#timeline-scrub::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); cursor: pointer; }
+.loop-label { font-size: 11px; color: var(--muted); cursor: pointer; user-select: none; }
+.loop-label.on { color: var(--accent); }
+.empty-state { text-align: center; max-width: 320px; }
+.empty-state .icon { font-size: 48px; margin-bottom: 16px; opacity: 0.3; }
+.empty-state h2 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+.empty-state p { color: var(--muted); line-height: 1.6; font-size: 13px; }
+#export-overlay { display: none; position: fixed; inset: 0; background: rgba(26,26,26,0.85); backdrop-filter: blur(6px); z-index: 100; align-items: center; justify-content: center; }
+#export-overlay.visible { display: flex; }
+.export-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 32px; width: 340px; text-align: center; }
+.export-panel h3 { font-size: 16px; margin-bottom: 6px; }
+.export-panel p { color: var(--muted); font-size: 13px; margin-bottom: 24px; line-height: 1.6; }
+.progress-track { background: var(--surface2); border-radius: 4px; height: 4px; overflow: hidden; margin-bottom: 10px; }
+#progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), #ff3c00); border-radius: 4px; width: 0%; transition: width 0.1s; }
+#progress-label { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+.spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 20px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+#export-cancel { background: none; border: 1px solid var(--border); color: var(--muted); padding: 8px 20px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+#export-cancel:hover { color: var(--text); border-color: #1a1a1a; }
+#toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 10px 20px; border-radius: 8px; font-size: 13px; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 200; }
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* Stuga minimalist theme */
+:root,
+[data-theme="dark"],
+[data-theme="light"] {
+  --bg: #f7f7f7;
+  --surface: #f7f7f7;
+  --surface2: #f7f7f7;
+  --border: #1a1a1a;
+  --text: #1a1a1a;
+  --muted: #1a1a1a;
+  --accent: #ff3c00;
+  --accent2: #ff3c00;
+  --radius: 8px;
+}
+body { background: #f7f7f7; color: #1a1a1a; }
+header,
+.sidebar,
+.controls,
+.export-panel,
+#toast,
+#drop-zone,
+.thumb-item,
+.thumb-placeholder,
+.progress-track,
+.setting-row select,
+.setting-row input,
+.color-row input,
+.field input,
+.back-btn,
+.theme-toggle {
+  background: #f7f7f7 !important;
+  color: #1a1a1a !important;
+  border-color: #1a1a1a !important;
+  box-shadow: none !important;
+}
+.btn,
+.back-btn,
+.ctrl-btn,
+#export-cancel,
+input,
+select,
+#drop-zone,
+.thumb-item,
+.thumb-placeholder,
+.controls,
+.export-panel,
+#toast,
+.swatch,
+.gradient-swatch {
+  border-radius: 6px !important;
+}
+.btn-primary,
+.btn-export,
+#progress-fill,
+.ctrl-btn:hover,
+#drop-zone:hover,
+#drop-zone.drag-over {
+  background: #ff3c00 !important;
+  color: #f7f7f7 !important;
+}
+.btn-export:hover:not(:disabled),
+.btn-primary:hover:not(:disabled),
+.back-btn:hover {
+  background: #ff3c00 !important;
+  color: #1a1a1a !important;
+}
+#canvas-container canvas { box-shadow: none !important; border: 1px solid #1a1a1a; border-radius: 8px !important; }
+.sidebar-section,
+header,
+.sidebar,
+.controls { border-color: #1a1a1a !important; }
+</style>
+</head>
+<body data-theme="dark">
+
+<!-- Theme Toggle Button -->
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+  <i class="fas fa-moon" id="theme-icon"></i>
+</button>
+
+<header>
+  <a href="index.html" class="back-btn">
+    <i class="fas fa-arrow-left"></i>
+    Back
+  </a>
+  <div class="logo">
+    <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png" alt="Stuga Studio" class="stuga-logo">
+    <div class="logo-text">
+      <h1>Card Studio</h1>
+      <span>Animated Card Gallery</span>
+    </div>
+  </div>
+  <span class="badge" id="dim-badge">16:9 · 60fps · 1920×1080</span>
+</header>
+
+<div class="workspace">
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Upload Images</div>
+      <div id="drop-zone">
+        <div class="drop-icon">⬆</div>
+        <p>Drag & drop images here<br>or click to browse</p>
+        <span class="btn-upload">Browse files</span>
+        <input type="file" id="file-input" multiple accept="image/*">
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Sequence <span id="seq-count" style="color:#1a1a1a"></span></div>
+      <div id="sequence-grid"></div>
+      <p class="sequence-note" id="seq-note">Add 2-50 images. They tile across scrolling rows and the featured reveal cards.</p>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Settings</div>
+
+      <div class="setting-row" style="flex-direction:column; align-items:flex-start; gap:8px">
+        <label>Card Gradient</label>
+        <div id="gradient-swatches" class="gradient-row" style="flex-wrap:wrap"></div>
+      </div>
+
+      <div class="setting-row" style="align-items:flex-start; flex-direction:column; gap:8px; margin-top:4px">
+        <label>Background</label>
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap">
+          <input type="color" id="bg-picker" value="#f7f7f7"
+            style="width:34px;height:34px;padding:2px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;flex-shrink:0">
+          <div id="bg-swatches" style="display:flex;gap:5px;flex-wrap:wrap"></div>
+        </div>
+      </div>
+
+      <div class="setting-row" style="margin-top:8px">
+        <label for="speed-slider">Animation Speed: <span id="speed-value">1.0x</span></label>
+        <input type="range" id="speed-slider" min="0.25" max="2.5" step="0.05" value="1" style="width: 100px;" aria-label="Adjust animation speed" aria-valuemin="0.25" aria-valuemax="2.5" aria-valuenow="1">
+      </div>
+
+      <div class="setting-row">
+        <label for="radius-select">Card Radius</label>
+        <select id="radius-select" aria-label="Select card corner radius">
+          <option value="0">None</option>
+          <option value="16">Small</option>
+          <option value="40" selected>Medium</option>
+          <option value="80">Large</option>
+        </select>
+      </div>
+
+      <div class="setting-row">
+        <label for="shadow-select">Card Shadow</label>
+        <select id="shadow-select" aria-label="Select card shadow effect">
+          <option value="none">None</option>
+          <option value="soft" selected>Soft</option>
+          <option value="strong">Strong</option>
+        </select>
+      </div>
+
+      <div style="margin-top:4px">
+        <label class="sidebar-label" style="display:block;margin-bottom:10px">Canvas Size</label>
+        <div style="display:flex;gap:6px;margin-bottom:8px">
+          <div style="flex:1">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:4px;letter-spacing:0.08em">W</div>
+            <input type="number" id="input-w" value="1920" min="360" max="3840" step="2"
+              style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:12px;padding:6px 8px;outline:none">
+          </div>
+          <div style="display:flex;align-items:flex-end;padding-bottom:6px;color:var(--muted);font-size:12px">x</div>
+          <div style="flex:1">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:4px;letter-spacing:0.08em">H</div>
+            <input type="number" id="input-h" value="1080" min="360" max="3840" step="2"
+              style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:12px;padding:6px 8px;outline:none">
+          </div>
+          <div style="display:flex;align-items:flex-end;padding-bottom:2px">
+            <button id="btn-lock-ratio" title="Lock aspect ratio"
+              style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;color:var(--muted);cursor:pointer;font-size:12px;width:30px;height:30px;display:flex;align-items:center;justify-content:center">L</button>
+          </div>
+        </div>
+        <div id="size-presets" style="display:flex;flex-wrap:wrap;gap:5px"></div>
+      </div>
+    </div>
+
+    <div class="sidebar-actions">
+      <button class="btn btn-primary" id="btn-preview" disabled>Preview Animation</button>
+      <button class="btn btn-export" id="btn-export" disabled>Export MP4</button>
+    </div>
+
+  </aside>
+
+  <main class="main-area" id="main-area">
+    <div class="empty-state" id="empty-state">
+      <div class="icon">🃏</div>
+      <h2>Build Your Card Reel</h2>
+      <p>Upload 2-50 images. They tile across two infinite scrolling rows in a seamless loop.</p>
+    </div>
+    <div id="canvas-container" style="display:none">
+      <canvas id="preview-canvas"></canvas>
+    </div>
+    <div class="controls" id="playback-controls" style="display:none">
+      <button class="ctrl-btn" id="btn-restart" title="Restart">⟲</button>
+      <button class="ctrl-btn" id="btn-play" title="Play / Pause">▶</button>
+      <div class="ctrl-divider"></div>
+      <div class="timeline">
+        <span id="time-current">0.0s</span>
+        <input type="range" id="timeline-scrub" min="0" max="100" value="0" step="0.1">
+        <span id="time-total">0.0s</span>
+      </div>
+      <div class="ctrl-divider"></div>
+      <span class="loop-label on" id="loop-toggle">↺ Loop</span>
+    </div>
+  </main>
+</div>
+
+<div id="export-overlay">
+  <div class="export-panel">
+    <div class="spinner"></div>
+    <h3>Exporting Reel</h3>
+    <p>Rendering frames at full resolution.<br>This may take a moment.</p>
+    <div class="progress-track"><div id="progress-fill"></div></div>
+    <div id="progress-label">0%</div>
+    <button id="export-cancel">Cancel</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script type="module">
+// ────────────────────────────────────────────────────────
+//  CANVAS / TIMING
+// ────────────────────────────────────────────────────────
+let CW = 1920, CH = 1080;
+const FPS = 60;
+const TOTAL_FRAMES = 480; // 8 s seamless loop
+
+// ────────────────────────────────────────────────────────
+//  VIRTUAL GEOMETRY
+// ────────────────────────────────────────────────────────
+const CARD_W = 678, CARD_H = 423, CARD_GAP = 64;
+const CARD_STEP = CARD_W + CARD_GAP; // 742
+
+// Row centre Y in 1920×1080 reference space
+const ROW_CY = [270, 810];
+
+
+// ────────────────────────────────────────────────────────
+//  GRADIENT PRESETS
+// ────────────────────────────────────────────────────────
+const GRADIENTS = [
+  { id: '#f7f7f7',  c1: '#f7f7f7', c2: '#f7f7f7' },
+  { id: 'orange', c1: '#ff3c00', c2: '#ff3c00' },
+  { id: 'slate',  c1: '#1a1a1a', c2: '#1a1a1a' },
+  { id: '#1a1a1a',  c1: '#1a1a1a', c2: '#1a1a1a' },
+  { id: 'ash',    c1: '#f7f7f7', c2: '#1a1a1a' },
+  { id: 'ember',  c1: '#ff3c00', c2: '#1a1a1a' },
+  { id: 'mono',   c1: '#f7f7f7', c2: '#1a1a1a' },
+  { id: 'studio', c1: '#ff3c00', c2: '#1a1a1a' },
+];
+let activeGradient = GRADIENTS[0];
+
+// ────────────────────────────────────────────────────────
+//  STATE
+// ────────────────────────────────────────────────────────
+let images = [];
+const MAX_IMAGES = 50;
+let frame = 0;
+let totalFrames = TOTAL_FRAMES;
+let isPlaying = false, isLooping = true;
+let rafId = null, lastTs = null, acc = 0;
+let speedMult = 1;
+let bgColor = '#f7f7f7';
+let cornerR = 40;
+let shadowMode = 'soft';
+let exportAborted = false, isScrubbing = false;
+
+// ────────────────────────────────────────────────────────
+//  BEZIER INTERPOLATION
+// ────────────────────────────────────────────────────────
+function cbx(p1x, p2x, t) { return 3*(1-t)*(1-t)*t*p1x + 3*(1-t)*t*t*p2x + t*t*t; }
+function cby(p1y, p2y, t) { return 3*(1-t)*(1-t)*t*p1y + 3*(1-t)*t*t*p2y + t*t*t; }
+function solveT(p1x, p2x, x) {
+  let t = x;
+  for (let i = 0; i < 10; i++) {
+    const err = cbx(p1x, p2x, t) - x;
+    const d   = 3*(1-t)*(1-t)*p1x + 6*(1-t)*t*(p2x-p1x) + 3*t*t*(1-p2x);
+    if (Math.abs(d) < 1e-9) break;
+    t = Math.max(0, Math.min(1, t - err / d));
+  }
+  return t;
+}
+function bezP(ox, oy, ix, iy, tn) {
+  if (ox === 0 && oy === 0 && ix === 1 && iy === 1) return tn;
+  return cby(oy, iy, solveT(ox, ix, tn));
+}
+
+
+// ────────────────────────────────────────────────────────
+//  DRAWING HELPERS
+// ────────────────────────────────────────────────────────
+function roundRect(ctx, x, y, w, h, r) {
+  r = Math.min(r, w/2, h/2);
+  if (r <= 0) { ctx.rect(x, y, w, h); return; }
+  ctx.beginPath();
+  ctx.moveTo(x+r, y);
+  ctx.arcTo(x+w, y,   x+w, y+h, r);
+  ctx.arcTo(x+w, y+h, x,   y+h, r);
+  ctx.arcTo(x,   y+h, x,   y,   r);
+  ctx.arcTo(x,   y,   x+w, y,   r);
+  ctx.closePath();
+}
+
+function drawCard(ctx, cx, cy, w, h, img, r, shadow, scaleHint) {
+  if (w < 1 || h < 1) return;
+  const x = cx - w/2, y = cy - h/2;
+  ctx.save();
+
+  if (shadow !== 'none') {
+    const k    = shadow === 'strong' ? 1.6 : 1;
+    ctx.shadowColor   = 'rgba(26,26,26,' + (shadow === 'strong' ? 0.28 : 0.16) + ')';
+    ctx.shadowBlur    = 32 * k * scaleHint;
+    ctx.shadowOffsetY = 10 * k * scaleHint;
+    ctx.shadowOffsetX = 3  * k * scaleHint;
+  }
+
+  // Gradient fill
+  const grd = ctx.createLinearGradient(x+w, y+h, x, y);
+  grd.addColorStop(0, activeGradient.c1);
+  grd.addColorStop(1, activeGradient.c2);
+  ctx.fillStyle = grd;
+  roundRect(ctx, x, y, w, h, r);
+  ctx.fill();
+
+  ctx.shadowColor = 'transparent';
+
+  if (img) {
+    ctx.save();
+    roundRect(ctx, x, y, w, h, r);
+    ctx.clip();
+    const iw = img.naturalWidth || img.width;
+    const ih = img.naturalHeight || img.height;
+    const s  = Math.max(w / iw, h / ih);
+    ctx.drawImage(img, cx - iw*s/2, cy - ih*s/2, iw*s, ih*s);
+    ctx.restore();
+  }
+
+  ctx.restore();
+}
+
+// ────────────────────────────────────────────────────────
+//  RENDER
+// ────────────────────────────────────────────────────────
+function render(canvas, f) {
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  const sx = W / 1920, sy = H / 1080;
+
+  // Background
+  ctx.clearRect(0, 0, W, H);
+  const bgGrd = ctx.createLinearGradient(W*0.17, 0, W*0.83, H);
+  bgGrd.addColorStop(0, bgColor);
+  bgGrd.addColorStop(1, shadeColor(bgColor, -18));
+  ctx.fillStyle = bgGrd;
+  ctx.fillRect(0, 0, W, H);
+
+  if (images.length === 0) return;
+
+  const n      = images.length;
+  const step   = CARD_STEP * sx;
+  const cw     = CARD_W * sx;
+  const ch     = CARD_H * sy;
+  const r      = cornerR * Math.min(sx, sy);
+
+  // One full image cycle = n * CARD_STEP virtual pixels.
+  // scrollPx advances so that frame 0 and frame TOTAL_FRAMES are pixel-identical → seamless.
+  const loopPx  = n * CARD_STEP;
+  const scrollPx = (f * loopPx / TOTAL_FRAMES) % loopPx; // 0 → loopPx, wraps to 0
+
+  for (let ri = 0; ri < 2; ri++) {
+    const rowCY = ROW_CY[ri] * sy;
+
+    // Row 1 scrolls right: track shifts right (shift increases → cards move right).
+    // Row 2 scrolls left: use the complement so it runs in reverse, staggered by n/2.
+    const phase = ri === 1 ? Math.floor(n / 2) * CARD_STEP : 0;
+    const shift = ri === 0 ? scrollPx : (loopPx - scrollPx + phase) % loopPx;
+
+    // Virtual card vi sits at virtual position vi * CARD_STEP.
+    // After the track shifts by `shift`, it appears at canvas x = (vi * CARD_STEP - shift) * sx.
+    const viStart = Math.floor(shift / CARD_STEP) - 1;
+    const viEnd   = viStart + Math.ceil(W / sx / CARD_STEP) + 3;
+
+    for (let vi = viStart; vi <= viEnd; vi++) {
+      const cx = (vi * CARD_STEP - shift) * sx; // left edge in canvas px
+      if (cx + cw < 0 || cx > W) continue;
+      const imgIdx = ((vi % n) + n) % n;
+      drawCard(ctx, cx + cw / 2, rowCY, cw, ch, images[imgIdx], r, shadowMode, 1);
+    }
+  }
+}
+
+function shadeColor(hex, pct) {
+  const r = parseInt(hex.slice(1,3),16);
+  const g = parseInt(hex.slice(3,5),16);
+  const b = parseInt(hex.slice(5,7),16);
+  const clamp = v => Math.max(0, Math.min(255, Math.round(v + pct*2.55)));
+  return '#'+[clamp(r),clamp(g),clamp(b)].map(v=>v.toString(16).padStart(2,'0')).join('');
+}
+
+// ────────────────────────────────────────────────────────
+//  ANIMATION LOOP
+// ────────────────────────────────────────────────────────
+function tick(ts) {
+  if (!isPlaying) return;
+  if (!lastTs) lastTs = ts;
+  acc += (ts - lastTs) * speedMult;
+  lastTs = ts;
+  const fd = 1000 / FPS;
+  while (acc >= fd) { frame++; acc -= fd; }
+  if (frame >= totalFrames) {
+    if (isLooping) frame = 0; else { frame = totalFrames - 1; pause(); }
+  }
+  renderPreview(); updateScrubber();
+  rafId = requestAnimationFrame(tick);
+}
+function play()  { if (isPlaying) return; isPlaying = true; lastTs = null; acc = 0; document.getElementById('btn-play').textContent = '⏸'; rafId = requestAnimationFrame(tick); }
+function pause() { isPlaying = false; if (rafId) cancelAnimationFrame(rafId); document.getElementById('btn-play').textContent = '▶'; }
+function restart() { frame = 0; renderPreview(); updateScrubber(); if (!isPlaying) play(); }
+
+// ────────────────────────────────────────────────────────
+//  PREVIEW CANVAS
+// ────────────────────────────────────────────────────────
+let previewCanvas;
+function initCanvas() {
+  previewCanvas = document.getElementById('preview-canvas');
+  previewCanvas.width = CW; previewCanvas.height = CH;
+  const ma = document.getElementById('main-area');
+  const sf = Math.min((ma.clientWidth - 56) / CW, (ma.clientHeight - 90) / CH, 1);
+  previewCanvas.style.width  = Math.round(CW * sf) + 'px';
+  previewCanvas.style.height = Math.round(CH * sf) + 'px';
+}
+function renderPreview() { if (previewCanvas) render(previewCanvas, frame); }
+function ratioLabel(w, h) {
+  const gcd = (a, b) => b ? gcd(b, a % b) : a;
+  const d = gcd(w, h);
+  return `${w / d}:${h / d}`;
+}
+function updateDimensionBadge() {
+  document.getElementById('dim-badge').textContent = `${ratioLabel(CW, CH)} | 60fps | ${CW}x${CH}`;
+}
+function clampDimension(value, fallback) {
+  const n = parseInt(value, 10);
+  return Math.max(360, Math.min(3840, Math.round((Number.isFinite(n) ? n : fallback) / 2) * 2));
+}
+function applyDimensions(w, h) {
+  CW = clampDimension(w, CW);
+  CH = clampDimension(h, CH);
+  document.getElementById('input-w').value = CW;
+  document.getElementById('input-h').value = CH;
+  updateDimensionBadge();
+  initCanvas();
+  renderPreview();
+}
+function setupCanvasSizeControls() {
+  const presets = [
+    { label: '16:9', w: 1920, h: 1080 },
+    { label: '9:16', w: 1080, h: 1920 },
+    { label: '4:5', w: 1080, h: 1350 },
+    { label: '1:1', w: 1080, h: 1080 },
+    { label: '4:3', w: 1600, h: 1200 },
+  ];
+  const presetsEl = document.getElementById('size-presets');
+  let lockRatio = true;
+  let lockedRatio = CW / CH;
+  presets.forEach(p => {
+    const btn = document.createElement('button');
+    btn.textContent = p.label;
+    btn.style.cssText = 'background:var(--surface2);border:1px solid var(--border);border-radius:20px;color:var(--muted);font-size:10px;padding:4px 10px;cursor:pointer;letter-spacing:0.08em';
+    btn.addEventListener('click', () => { lockedRatio = p.w / p.h; applyDimensions(p.w, p.h); });
+    presetsEl.appendChild(btn);
+  });
+  document.getElementById('btn-lock-ratio').addEventListener('click', () => {
+    lockRatio = !lockRatio;
+    lockedRatio = CW / CH;
+    document.getElementById('btn-lock-ratio').style.color = lockRatio ? 'var(--accent)' : 'var(--muted)';
+  });
+  document.getElementById('input-w').addEventListener('change', e => {
+    const w = clampDimension(e.target.value, CW);
+    applyDimensions(w, lockRatio ? Math.round(w / lockedRatio) : CH);
+  });
+  document.getElementById('input-h').addEventListener('change', e => {
+    const h = clampDimension(e.target.value, CH);
+    applyDimensions(lockRatio ? Math.round(h * lockedRatio) : CW, h);
+  });
+  document.getElementById('btn-lock-ratio').style.color = 'var(--accent)';
+  updateDimensionBadge();
+}
+function updateScrubber() {
+  const s = document.getElementById('timeline-scrub');
+  if (!isScrubbing) s.value = (frame / totalFrames * 100).toFixed(1);
+  document.getElementById('time-current').textContent = (frame / FPS).toFixed(1) + 's';
+}
+
+// ────────────────────────────────────────────────────────
+//  SETUP
+// ────────────────────────────────────────────────────────
+function setupAnimation() {
+  if (images.length < 2) return;
+  frame = 0;
+  document.getElementById('time-total').textContent = (totalFrames / FPS).toFixed(1) + 's';
+  initCanvas();
+  document.getElementById('empty-state').style.display      = 'none';
+  document.getElementById('canvas-container').style.display  = 'block';
+  document.getElementById('playback-controls').style.display = 'flex';
+  document.getElementById('btn-preview').textContent = 'Play Animation';
+  document.getElementById('btn-preview').disabled    = false;
+  document.getElementById('btn-export').disabled     = false;
+  renderPreview(); updateScrubber();
+}
+
+// ────────────────────────────────────────────────────────
+//  EXPORT
+// ────────────────────────────────────────────────────────
+async function exportMP4() {
+  let Muxer, ArrayBufferTarget;
+  try {
+    const mod = await import('https://cdn.jsdelivr.net/npm/mp4-muxer@5/build/mp4-muxer.mjs');
+    Muxer = mod.Muxer; ArrayBufferTarget = mod.ArrayBufferTarget;
+  } catch { exportWithMediaRecorder(); return; }
+  if (!('VideoEncoder' in window)) { exportWithMediaRecorder(); return; }
+
+  pause(); exportAborted = false; showExportOverlay();
+  const offC = document.createElement('canvas');
+  offC.width = CW; offC.height = CH;
+  const target = new ArrayBufferTarget();
+  const muxer  = new Muxer({ target, video: { codec: 'avc', width: CW, height: CH }, fastStart: 'in-memory' });
+  const encoder = new VideoEncoder({
+    output: (chunk, meta) => muxer.addVideoChunk(chunk, meta),
+    error:  (e) => { showToast('Encoding error: ' + e.message); hideExportOverlay(); },
+  });
+  const codec = (await VideoEncoder.isConfigSupported({ codec: 'avc1.640029', width: CW, height: CH, bitrate: 14_000_000, framerate: FPS })).supported ? 'avc1.640029' : 'avc1.640032';
+  encoder.configure({ codec, width: CW, height: CH, bitrate: 14_000_000, framerate: FPS, latencyMode: 'quality' });
+
+  let f = 0;
+  function encodeNext() {
+    if (exportAborted) { encoder.close(); hideExportOverlay(); return; }
+    if (f >= totalFrames) {
+      encoder.flush().then(() => {
+        muxer.finalize();
+        const blob = new Blob([target.buffer], { type: 'video/mp4' });
+        const url  = URL.createObjectURL(blob);
+        const a    = document.createElement('a');
+        a.href = url; a.download = `card-reel-${Date.now()}.mp4`;
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 5000);
+        hideExportOverlay(); showToast('Reel exported!');
+      });
+      return;
+    }
+    render(offC, f);
+    const vf = new VideoFrame(offC, { timestamp: Math.round(f/FPS*1_000_000), duration: Math.round(1_000_000/FPS) });
+    encoder.encode(vf, { keyFrame: f % (FPS*2) === 0 }); vf.close();
+    setProgress(f / totalFrames); f++;
+    if (f % 4 === 0) setTimeout(encodeNext, 0); else encodeNext();
+  }
+  encodeNext();
+}
+
+function exportWithMediaRecorder() {
+  pause(); exportAborted = false; showExportOverlay();
+  const offC = document.createElement('canvas');
+  offC.width = CW; offC.height = CH;
+  const stream = offC.captureStream(FPS);
+  
+  // Try MP4-capable codecs first, then fallback to WebM
+  const types  = ['video/mp4;codecs=h264', 'video/mp4;codecs=hev1', 'video/webm;codecs=h264', 'video/webm;codecs=vp9', 'video/webm'];
+  const mime   = types.find(t => MediaRecorder.isTypeSupported(t)) || 'video/webm';
+  
+  const rec    = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 14_000_000 });
+  const chunks = [];
+  rec.ondataavailable = e => chunks.push(e.data);
+  rec.onstop = () => {
+    const blob = new Blob(chunks, { type: mime });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url;
+    
+    // Use appropriate extension based on actual mime type
+    const extension = mime.startsWith('video/mp4') ? 'mp4' : 'webm';
+    a.download = `card-reel-${Date.now()}.${extension}`;
+    
+    a.click(); 
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+    
+    // Show appropriate message
+    const formatMessage = extension === 'mp4' ? 'MP4 video exported!' : 'WebM video exported (browser limitation)';
+    hideExportOverlay(); 
+    showToast(formatMessage);
+  };
+  rec.start();
+  let f = 0;
+  function nextFrame() {
+    if (exportAborted) { rec.stop(); return; }
+    if (f >= totalFrames) { setTimeout(() => rec.stop(), 200); return; }
+    render(offC, f); setProgress(f / totalFrames); f++;
+    setTimeout(nextFrame, 1000 / FPS);
+  }
+  nextFrame();
+}
+
+function showExportOverlay() { document.getElementById('export-overlay').classList.add('visible'); document.getElementById('progress-fill').style.width = '0%'; document.getElementById('progress-label').textContent = '0%'; }
+function hideExportOverlay() { document.getElementById('export-overlay').classList.remove('visible'); }
+function setProgress(p)      { document.getElementById('progress-fill').style.width = (p*100).toFixed(0)+'%'; document.getElementById('progress-label').textContent = (p*100).toFixed(0)+'%'; }
+
+// ────────────────────────────────────────────────────────
+//  TOAST / IMAGES
+// ────────────────────────────────────────────────────────
+let toastTimer;
+function showToast(msg) { const el = document.getElementById('toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 2800); }
+
+function loadImage(file) {
+  return new Promise((res, rej) => { const img = new Image(); img.onload = () => res(img); img.onerror = rej; img.src = URL.createObjectURL(file); });
+}
+async function addFiles(files) {
+  const allowed = Array.from(files).filter(f => f.type.startsWith('image/'));
+  const space   = MAX_IMAGES - images.length;
+  if (space <= 0) { showToast(`Max ${MAX_IMAGES} images`); return; }
+  const loaded = await Promise.all(allowed.slice(0, space).map(loadImage));
+  images.push(...loaded);
+  rebuildSequenceGrid();
+  if (images.length >= 2) setupAnimation();
+  document.getElementById('btn-preview').disabled = images.length < 2;
+}
+
+// ────────────────────────────────────────────────────────
+//  SEQUENCE GRID
+// ────────────────────────────────────────────────────────
+let dragSrcIdx = null;
+function rebuildSequenceGrid() {
+  const grid = document.getElementById('sequence-grid');
+  grid.innerHTML = '';
+  images.forEach((img, i) => {
+    const item = document.createElement('div');
+    item.className = 'thumb-item'; item.draggable = true; item.dataset.idx = i;
+    const imgEl = document.createElement('img'); imgEl.src = img.src;
+    const numEl = document.createElement('div'); numEl.className = 'thumb-num'; numEl.textContent = i + 1;
+    const rmEl  = document.createElement('div'); rmEl.className  = 'thumb-remove'; rmEl.textContent = '×';
+    rmEl.addEventListener('click', e => {
+      e.stopPropagation(); images.splice(i, 1); rebuildSequenceGrid();
+      if (images.length < 2) { document.getElementById('btn-preview').disabled = true; document.getElementById('btn-export').disabled = true; pause(); frame = 0; }
+      else setupAnimation();
+    });
+    item.appendChild(imgEl); item.appendChild(numEl); item.appendChild(rmEl);
+    item.addEventListener('dragstart', e => { dragSrcIdx = i; item.classList.add('dragging'); e.dataTransfer.effectAllowed = 'move'; });
+    item.addEventListener('dragend',   () => { item.classList.remove('dragging'); document.querySelectorAll('.thumb-item').forEach(el => el.classList.remove('drag-target')); });
+    item.addEventListener('dragover',  e => { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; document.querySelectorAll('.thumb-item').forEach(el => el.classList.remove('drag-target')); item.classList.add('drag-target'); });
+    item.addEventListener('drop',      e => {
+      e.preventDefault(); if (dragSrcIdx === null || dragSrcIdx === i) return;
+      const moved = images.splice(dragSrcIdx, 1)[0]; images.splice(i, 0, moved); dragSrcIdx = null;
+      rebuildSequenceGrid(); setupAnimation();
+    });
+    grid.appendChild(item);
+  });
+  for (let i = 0; i < Math.min(4, MAX_IMAGES - images.length); i++) {
+    const ph = document.createElement('div');
+    ph.className = 'thumb-placeholder'; ph.textContent = '+';
+    ph.addEventListener('click', () => document.getElementById('file-input').click());
+    grid.appendChild(ph);
+  }
+  const count = document.getElementById('seq-count');
+  const note  = document.getElementById('seq-note');
+  count.textContent = images.length ? `(${images.length}/${MAX_IMAGES})` : '';
+  note.textContent  = images.length >= 2
+    ? `${images.length} images tile across both scrolling rows in a seamless loop.`
+    : 'Add at least 2 images to build your reel.';
+}
+
+// ────────────────────────────────────────────────────────
+//  EVENT WIRING
+// ────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  rebuildSequenceGrid();
+  setupCanvasSizeControls();
+
+  const dz = document.getElementById('drop-zone');
+  dz.addEventListener('click',    () => document.getElementById('file-input').click());
+  dz.addEventListener('dragover', e  => { e.preventDefault(); dz.classList.add('drag-over'); });
+  dz.addEventListener('dragleave',() => dz.classList.remove('drag-over'));
+  dz.addEventListener('drop',     e  => { e.preventDefault(); dz.classList.remove('drag-over'); addFiles(e.dataTransfer.files); });
+  document.getElementById('file-input').addEventListener('change', e => { addFiles(e.target.files); e.target.value = ''; });
+
+  document.getElementById('btn-preview').addEventListener('click', () => { if (isPlaying) pause(); else { frame = 0; play(); } });
+  document.getElementById('btn-export').addEventListener('click', exportMP4);
+  document.getElementById('btn-play').addEventListener('click', () => { if (isPlaying) pause(); else play(); });
+  document.getElementById('btn-restart').addEventListener('click', restart);
+  document.getElementById('loop-toggle').addEventListener('click', () => {
+    isLooping = !isLooping; document.getElementById('loop-toggle').classList.toggle('on', isLooping);
+  });
+
+  const scrub = document.getElementById('timeline-scrub');
+  scrub.addEventListener('mousedown', () => { isScrubbing = true; pause(); });
+  scrub.addEventListener('input',     () => { frame = Math.round(+scrub.value/100*totalFrames); renderPreview(); document.getElementById('time-current').textContent = (frame/FPS).toFixed(1)+'s'; });
+  scrub.addEventListener('mouseup',   () => { isScrubbing = false; play(); });
+
+  // Gradient swatches
+  const swatchWrap = document.getElementById('gradient-swatches');
+  GRADIENTS.forEach(g => {
+    const s = document.createElement('div');
+    s.className = 'gradient-swatch' + (g === activeGradient ? ' active' : '');
+    s.style.background = `linear-gradient(135deg, ${g.c1}, ${g.c2})`;
+    s.title = g.id;
+    s.addEventListener('click', () => {
+      activeGradient = g;
+      document.querySelectorAll('.gradient-swatch').forEach(el => el.classList.remove('active'));
+      s.classList.add('active');
+      renderPreview();
+    });
+    swatchWrap.appendChild(s);
+  });
+
+  // Background swatches
+  const bgColors = ['#f7f7f7','#f7f7f7','#1a1a1a','#1a1a1a','#1a1a1a','#1a1a1a','#ff3c00','#ff3c00'];
+  const bgWrap = document.getElementById('bg-swatches');
+  bgColors.forEach(c => {
+    const s = document.createElement('div');
+    s.style.cssText = `width:18px;height:18px;border-radius:4px;background:${c};cursor:pointer;border:1.5px solid rgba(247,247,247,0.12);flex-shrink:0;transition:transform 0.1s`;
+    s.title = c;
+    s.addEventListener('click', () => { bgColor = c; document.getElementById('bg-picker').value = c; renderPreview(); });
+    s.addEventListener('mouseenter', () => s.style.transform = 'scale(1.2)');
+    s.addEventListener('mouseleave', () => s.style.transform = '');
+    bgWrap.appendChild(s);
+  });
+  document.getElementById('bg-picker').addEventListener('input', e => { bgColor = e.target.value; renderPreview(); });
+
+  document.getElementById('speed-slider').addEventListener('input', e => { 
+  speedMult = parseFloat(e.target.value); 
+  document.getElementById('speed-value').textContent = speedMult.toFixed(2) + 'x';
+});
+  document.getElementById('radius-select').addEventListener('change', e => { cornerR = parseInt(e.target.value); renderPreview(); });
+  document.getElementById('shadow-select').addEventListener('change', e => { shadowMode = e.target.value; renderPreview(); });
+  document.getElementById('export-cancel').addEventListener('click',  () => { exportAborted = true; hideExportOverlay(); });
+
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+    if (e.code === 'Space') { e.preventDefault(); if (isPlaying) pause(); else play(); }
+    if (e.code === 'KeyR') restart();
+    if (e.code === 'KeyL') document.getElementById('loop-toggle').click();
+  });
+
+  new ResizeObserver(() => { if (images.length >= 2) initCanvas(); }).observe(document.getElementById('main-area'));
+});
+
+// Theme Toggle Functionality
+class ThemeManager {
+  constructor() {
+    this.themeToggle = document.getElementById('theme-toggle');
+    this.themeIcon = document.getElementById('theme-icon');
+    this.html = document.documentElement;
+    
+    this.init();
+  }
+
+  init() {
+    // Load saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    this.setTheme(savedTheme);
+    
+    // Add click listener
+    this.themeToggle.addEventListener('click', () => {
+      this.toggleTheme();
+    });
+  }
+
+  setTheme(theme) {
+    this.html.setAttribute('data-theme', theme);
+    document.body.setAttribute('data-theme', theme);
+    this.updateIcon(theme);
+    localStorage.setItem('theme', theme);
+  }
+
+  toggleTheme() {
+    const currentTheme = this.html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    this.setTheme(newTheme);
+  }
+
+  updateIcon(theme) {
+    this.themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+  }
+}
+
+// Initialize theme manager
+document.addEventListener('DOMContentLoaded', () => {
+  new ThemeManager();
+});
+</script>
+</body>
+</html>

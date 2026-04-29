@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support | Stuga Studio - Get Help with Our Tools</title>
+<meta name="description" content="Get help and support for Stuga Studio tools. Find FAQs, tutorials, and contact information for assistance with our video creation and animation tools.">
+<meta name="keywords" content="stuga studio support, help center, video tool support, customer service, technical assistance">
+<meta name="author" content="Stuga Studio">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Support | Stuga Studio - Get Help with Our Tools">
+<meta property="og:description" content="Get help and support for Stuga Studio tools. Find FAQs, tutorials, and contact information.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stuga.studio/support">
+<meta property="og:image" content="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Support | Stuga Studio">
+<meta name="twitter:description" content="Get help and support for Stuga Studio tools">
+<meta name="twitter:image" content="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
+<link rel="canonical" href="https://stuga.studio/support">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Support | Stuga Studio",
+  "description": "Get help and support for Stuga Studio tools. Find FAQs, tutorials, and contact information.",
+  "url": "https://stuga.studio/support",
+  "creator": {
+    "@type": "Organization",
+    "name": "Stuga Studio"
+  },
+  "mainEntity": {
+    "@type": "ContactPage",
+    "name": "Stuga Studio Support",
+    "description": "Help and support for Stuga Studio tools",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "occxlnceoffice@gmail.com",
+      "contactType": "customer service",
+      "areaServed": "Worldwide",
+      "availableLanguage": ["English"]
+    }
+  }
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #1a1a1a;
+  --surface: #1a1a1a;
+  --surface2: #1a1a1a;
+  --border: #1a1a1a;
+  --text: #f7f7f7;
+  --muted: #1a1a1a;
+  --accent: #ff3c00;
+  --radius: 10px;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Header and Navbar Styles */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(247, 247, 247, 0.1);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  max-width: 100%;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-brand .stuga-logo {
+  width: 62px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: contain;
+  background: transparent;
+}
+.brand-text {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #f7f7f7;
+  letter-spacing: 0.02em;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav-link {
+  font-family: "Roboto Mono", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(247, 247, 247, 0.8);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+.nav-link:hover {
+  color: #ff3c00;
+}
+
+/* Main Content */
+.main-content {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 80px 0;
+  text-align: center;
+}
+.hero-title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+.hero-subtitle {
+  font-size: clamp(18px, 2vw, 24px);
+  color: var(--muted);
+  margin-bottom: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Support Options Grid */
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin: 48px 0;
+}
+.support-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.support-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+.support-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--accent), #ff6b35);
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+.support-title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.support-description {
+  color: var(--muted);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+.support-button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.support-button:hover {
+  background: #ff6b35;
+  transform: translateY(-2px);
+}
+.support-button.secondary {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+.support-button.secondary:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+.section-title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 48px;
+  text-align: center;
+}
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 24px;
+  text-align: left;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+.faq-question:hover {
+  background: var(--surface2);
+}
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+.faq-question.active .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: padding 0.3s ease, max-height 0.3s ease;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.faq-item.active .faq-answer {
+  padding: 0 24px 24px;
+  max-height: 500px;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--accent), #ff6b35);
+  border-radius: var(--radius);
+  margin: 80px 0;
+  text-align: center;
+}
+.contact-title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.contact-text {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-email {
+  display: inline-block;
+  background: #fff;
+  color: var(--accent);
+  padding: 16px 32px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.contact-email:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 60, 0, 0.3);
+}
+
+/* Footer */
+footer {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.footer-links {
+  display: flex;
+  gap: 32px;
+}
+.footer-link {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-link:hover {
+  color: var(--accent);
+}
+.footer-copyright {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <nav class="navbar">
+    <div class="nav-brand">
+      <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png" alt="Stuga Studio" class="stuga-logo">
+    </div>
+    <div class="nav-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+  </nav>
+</header>
+
+<main class="main-content">
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h1 class="hero-title">How Can We Help?</h1>
+      <p class="hero-subtitle">Get support for Stuga Studio tools and find answers to your questions</p>
+    </section>
+
+    <!-- Support Options -->
+    <section class="support-options">
+      <div class="support-grid">
+        <div class="support-card">
+          <div class="support-icon">📧</div>
+          <h2 class="support-title">Email Support</h2>
+          <p class="support-description">Get direct help from our team via email. We typically respond within 24 hours.</p>
+          <a href="mailto:occxlnceoffice@gmail.com" class="support-button">Send Email</a>
+        </div>
+        
+        <div class="support-card">
+          <div class="support-icon">📚</div>
+          <h2 class="support-title">Documentation</h2>
+          <p class="support-description">Browse our comprehensive guides and tutorials for each tool.</p>
+          <a href="#faq" class="support-button secondary">View FAQs</a>
+        </div>
+        
+        <div class="support-card">
+          <div class="support-icon">🎥</div>
+          <h2 class="support-title">Video Tutorials</h2>
+          <p class="support-description">Watch step-by-step video guides to master our tools quickly.</p>
+          <a href="#tutorials" class="support-button secondary">Coming Soon</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Are Stuga Studio tools really free to use?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes! All Stuga Studio tools are completely free to use. No hidden fees, subscriptions, or premium tiers. We believe in making professional video creation accessible to everyone.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Do I need to download or install any software?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            No downloads required! All our tools run directly in your web browser. Simply visit the tool page and start creating immediately.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            What browsers are supported?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Our tools work best on modern browsers including Chrome, Firefox, Safari, and Edge. We recommend using the latest version of your browser for the best experience.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I use the videos I create commercially?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes! All videos created with Stuga Studio tools can be used for both personal and commercial purposes without any licensing restrictions.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            What video formats can I export?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Our tools support exporting in MP4 and WebM formats. The exact format depends on your browser's capabilities, but we always prioritize MP4 when available.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Is there a limit on file size or duration?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            While there are no artificial limits on video duration, performance may vary with very long videos or large image collections. We recommend keeping videos under 5 minutes for optimal performance.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            How do I report bugs or request features?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            We love feedback! Send us an email at occxlnceoffice@gmail.com with details about any bugs you encounter or features you'd like to see. Your input helps us improve our tools.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I use my own images and media?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Absolutely! All our tools allow you to upload and use your own images, photos, and media files. Your files are processed locally in your browser and are not stored on our servers.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <h2 class="contact-title">Still Need Help?</h2>
+      <p class="contact-text">Our support team is here to help you get the most out of Stuga Studio tools</p>
+      <a href="mailto:occxlnceoffice@gmail.com" class="contact-email">occxlnceoffice@gmail.com</a>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="support.html" class="footer-link">Support</a>
+      </div>
+      <div class="footer-brand">
+        <strong>Stuga Studio</strong>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      © 2024 Stuga Studio. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const faqItem = button.parentElement;
+    const isActive = faqItem.classList.contains('active');
+    
+    // Close all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    
+    // Open clicked item if it wasn't active
+    if (!isActive) {
+      faqItem.classList.add('active');
+    }
+  });
+});
+</script>
+</body>
+</html>

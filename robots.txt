@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://stuga.studio/sitemap.xml
+
+# Allow search engines to crawl all tools and pages
+Allow: /about
+Allow: /support
+Allow: /card-studio
+Allow: /reel-studio
+Allow: /countdown-studio
+Allow: /screen-reel-studio
+
+# Block common non-content files
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /*.tmp$
+Disallow: /*.log$

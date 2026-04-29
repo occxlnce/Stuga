@@ -1,0 +1,1696 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reel Studio — 9:16 Photo Reel | Create Instagram Reels</title>
+<meta name="description" content="Create stunning 9:16 photo reels and Instagram videos with Reel Studio. Professional animations, perfect for social media content. No software download required.">
+<meta name="keywords" content="photo reel, Instagram reel creator, 9:16 video, social media video, photo animation, vertical video">
+<meta name="author" content="Stuga Studio">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Reel Studio — 9:16 Photo Reel | Create Instagram Reels">
+<meta property="og:description" content="Create stunning 9:16 photo reels and Instagram videos online. Professional animations for social media content.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stuga.studio/reel-studio">
+<meta property="og:image" content="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reel Studio — 9:16 Photo Reel">
+<meta name="twitter:description" content="Create stunning 9:16 photo reels and Instagram videos online">
+<meta name="twitter:image" content="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
+<link rel="canonical" href="https://stuga.studio/reel-studio">
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Reel Studio — 9:16 Photo Reel",
+  "description": "Create stunning 9:16 photo reels and Instagram videos with Reel Studio. Professional animations, perfect for social media content.",
+  "url": "https://stuga.studio/reel-studio",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "Stuga Studio"
+  },
+  "featureList": [
+    "9:16 photo reels",
+    "Instagram video creation",
+    "Social media animations",
+    "Vertical video editor",
+    "Professional photo transitions"
+  ]
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Dark mode styles */
+[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --surface: #1a1a1a;
+  --surface2: #1a1a1a;
+  --border: #1a1a1a;
+  --text: #f7f7f7;
+  --muted: #1a1a1a;
+  --accent: #ff3c00;
+  --accent2: #ff3c00;
+  --radius: 10px;
+}
+
+/* Light mode styles */
+[data-theme="light"] {
+  --bg: #f7f7f7;
+  --surface: #f7f7f7;
+  --surface2: #f7f7f7;
+  --border: #f7f7f7;
+  --text: #1a1a1a;
+  --muted: #1a1a1a;
+  --accent: #ff3c00;
+  --accent2: #ff3c00;
+  --radius: 10px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ──────────────────────────────────────────────────────── HEADER ──────────────────────────────────────────────────────── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--border);
+}
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.back-btn:hover {
+  background: var(--surface2);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+.back-btn i {
+  font-size: 11px;
+}
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(26,26,26,0.1);
+}
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26,26,26,0.15);
+}
+.theme-toggle i {
+  font-size: 16px;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+.theme-toggle:hover i {
+  color: var(--accent);
+}
+.logo { display: flex; align-items: center; gap: 12px; }
+.stuga-logo { width: 62px; height: 32px; border-radius: 6px; object-fit: contain; }
+.logo-text { display: flex; flex-direction: column; }
+.logo h1 { font-size: 15px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.logo span { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; }
+.badge {
+  font-size: 10px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.1em;
+}
+
+/* ──────────────────────────────────────────────────────── LAYOUT ──────────────────────────────────────────────────────── */
+.workspace {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  height: calc(100vh - 57px);
+}
+
+/* ──────────────────────────────────────────────────────── SIDEBAR ──────────────────────────────────────────────────────── */
+.sidebar {
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.sidebar-section {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* Drop Zone */
+#drop-zone {
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+}
+#drop-zone:hover, #drop-zone.drag-over {
+  border-color: var(--accent);
+  background: rgba(255, 60, 0, 0.08);
+}
+#drop-zone .drop-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+#drop-zone p {
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 12px;
+}
+#drop-zone .btn-upload {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 7px 16px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+#drop-zone .btn-upload:hover {
+  background: #1a1a1a;
+}
+#file-input { display: none; }
+
+/* Sequence Thumbnails */
+#sequence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  min-height: 60px;
+}
+.thumb-item {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: 7px;
+  overflow: hidden;
+  background: var(--surface2);
+  cursor: grab;
+  border: 1.5px solid transparent;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.thumb-item:hover { border-color: var(--border); }
+.thumb-item.dragging { opacity: 0.4; cursor: grabbing; }
+.thumb-item.drag-target { border-color: var(--accent); transform: scale(1.04); }
+.thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.thumb-num {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 18px;
+  height: 18px;
+  background: rgba(26,26,26,0.7);
+  border-radius: 50%;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.thumb-remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  background: rgba(26,26,26,0.7);
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  cursor: pointer;
+  color: #f7f7f7;
+}
+.thumb-item:hover .thumb-remove { display: flex; }
+.thumb-placeholder {
+  aspect-ratio: 4/5;
+  border-radius: 7px;
+  border: 1.5px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--border);
+  cursor: pointer;
+}
+.thumb-placeholder:hover { border-color: #1a1a1a; color: #1a1a1a; }
+
+.sequence-note {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* Settings */
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.setting-row label {
+  color: var(--muted);
+  font-size: 12px;
+}
+.setting-row select, .setting-row input[type=range] {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text);
+  font-size: 11px;
+  padding: 4px 8px;
+}
+.setting-row select { cursor: pointer; }
+
+/* Sidebar actions */
+.sidebar-actions {
+  padding: 20px;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.btn {
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s, opacity 0.15s, transform 0.1s;
+}
+.btn:active { transform: scale(0.98); }
+.btn:disabled { opacity: 0.35; cursor: default; }
+.btn-primary {
+  background: var(--accent);
+  color: #1a1a1a;
+}
+.btn-primary:hover:not(:disabled) { background: #ff3c00; }
+.btn-secondary {
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover:not(:disabled) { background: #1a1a1a; }
+.btn-export {
+  background: linear-gradient(135deg, #ff3c00, #ff3c00);
+  color: #f7f7f7;
+}
+.btn-export:hover:not(:disabled) { background: linear-gradient(135deg, #1a1a1a, #ff3c00); }
+
+/* ──────────────────────────────────────────────────────── MAIN AREA ──────────────────────────────────────────────────────── */
+.main-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Canvas container */
+#canvas-container {
+  position: relative;
+  flex-shrink: 0;
+}
+#canvas-container canvas {
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 8px 60px rgba(26,26,26,0.6);
+}
+
+/* Playback controls */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  padding: 8px 16px;
+}
+.ctrl-btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+.ctrl-btn:hover { background: var(--surface2); }
+.ctrl-btn.active { color: var(--accent); }
+.ctrl-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+}
+.timeline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+#timeline-scrub {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 120px;
+  height: 3px;
+  background: var(--border);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+#timeline-scrub::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+.loop-label {
+  font-size: 11px;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+}
+.loop-label.on { color: var(--accent); }
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  max-width: 280px;
+}
+.empty-state .icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+.empty-state h2 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+.empty-state p { color: var(--muted); line-height: 1.6; font-size: 13px; }
+
+/* ──────────────────────────────────────────────────────── EXPORT OVERLAY ──────────────────────────────────────────────────────── */
+#export-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,26,26,0.85);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+#export-overlay.visible { display: flex; }
+.export-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  width: 340px;
+  text-align: center;
+}
+.export-panel h3 { font-size: 16px; margin-bottom: 6px; }
+.export-panel p { color: var(--muted); font-size: 13px; margin-bottom: 24px; line-height: 1.6; }
+.progress-track {
+  background: var(--surface2);
+  border-radius: 4px;
+  height: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+#progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #ff3c00);
+  border-radius: 4px;
+  width: 0%;
+  transition: width 0.1s;
+}
+#progress-label { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+.spinner {
+  width: 36px; height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 0 auto 20px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+#export-cancel {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+#export-cancel:hover { color: var(--text); border-color: #1a1a1a; }
+
+/* ──────────────────────────────────────────────────────── TOAST ──────────────────────────────────────────────────────── */
+#toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 200;
+}
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Stuga minimalist theme */
+:root,
+[data-theme="dark"],
+[data-theme="light"] {
+  --bg: #f7f7f7;
+  --surface: #f7f7f7;
+  --surface2: #f7f7f7;
+  --border: #1a1a1a;
+  --text: #1a1a1a;
+  --muted: #1a1a1a;
+  --accent: #ff3c00;
+  --accent2: #ff3c00;
+  --radius: 8px;
+}
+body { background: #f7f7f7; color: #1a1a1a; }
+header,
+.sidebar,
+.controls,
+.export-panel,
+#toast,
+#drop-zone,
+.thumb-item,
+.thumb-placeholder,
+.progress-track,
+.setting-row select,
+.setting-row input,
+.color-row input,
+.field input,
+.back-btn,
+.theme-toggle {
+  background: #f7f7f7 !important;
+  color: #1a1a1a !important;
+  border-color: #1a1a1a !important;
+  box-shadow: none !important;
+}
+.btn,
+.back-btn,
+.ctrl-btn,
+#export-cancel,
+input,
+select,
+#drop-zone,
+.thumb-item,
+.thumb-placeholder,
+.controls,
+.export-panel,
+#toast,
+.swatch,
+.gradient-swatch {
+  border-radius: 6px !important;
+}
+.btn-primary,
+.btn-export,
+#progress-fill,
+.ctrl-btn:hover,
+#drop-zone:hover,
+#drop-zone.drag-over {
+  background: #ff3c00 !important;
+  color: #f7f7f7 !important;
+}
+.btn-export:hover:not(:disabled),
+.btn-primary:hover:not(:disabled),
+.back-btn:hover {
+  background: #ff3c00 !important;
+  color: #1a1a1a !important;
+}
+#canvas-container canvas { box-shadow: none !important; border: 1px solid #1a1a1a; border-radius: 8px !important; }
+.sidebar-section,
+header,
+.sidebar,
+.controls { border-color: #1a1a1a !important; }
+</style>
+</head>
+<body data-theme="dark">
+
+<!-- Theme Toggle Button -->
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+  <i class="fas fa-moon" id="theme-icon"></i>
+</button>
+
+<header>
+  <a href="index.html" class="back-btn">
+    <i class="fas fa-arrow-left"></i>
+    Back
+  </a>
+  <div class="logo">
+    <img src="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png" alt="Stuga Studio" class="stuga-logo">
+    <div class="logo-text">
+      <h1>Reel Studio</h1>
+      <span>9:16 Photo Reel</span>
+    </div>
+  </div>
+  <span class="badge" id="dim-badge">9:16 · 60fps · 1080×1920</span>
+</header>
+
+<div class="workspace">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Upload Images</div>
+      <div id="drop-zone">
+        <div class="drop-icon">⬆</div>
+        <p>Drag & drop images here<br>or click to browse</p>
+        <span class="btn-upload">Browse files</span>
+        <input type="file" id="file-input" multiple accept="image/*">
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Sequence <span id="seq-count" style="color:#1a1a1a"></span></div>
+      <div id="sequence-grid"></div>
+      <p class="sequence-note" id="seq-note">Add 2-50 images to build your reel. Drag thumbnails to reorder.</p>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Settings</div>
+      <div class="setting-row" style="align-items:flex-start; flex-direction:column; gap:8px">
+        <label>Background</label>
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap">
+          <input type="color" id="bg-picker" value="#f7f7f7"
+            style="width:34px;height:34px;padding:2px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;flex-shrink:0">
+          <div id="bg-swatches" style="display:flex;gap:5px;flex-wrap:wrap"></div>
+        </div>
+      </div>
+      <div class="setting-row">
+        <label>Speed: <span id="speed-value">1.0x</span></label>
+        <input type="range" id="speed-slider" min="0.25" max="2.5" step="0.05" value="1" style="width: 100px;">
+      </div>
+      <div class="setting-row">
+        <label>Card Radius</label>
+        <select id="radius-select">
+          <option value="0">None</option>
+          <option value="12" selected>Small</option>
+          <option value="24">Medium</option>
+          <option value="48">Large</option>
+          <option value="194">Pill</option>
+        </select>
+      </div>
+
+      <!-- Canvas size -->
+      <div style="margin-top:4px">
+        <label class="sidebar-label" style="display:block;margin-bottom:10px">Canvas Size</label>
+        <div style="display:flex;gap:6px;margin-bottom:8px">
+          <div style="flex:1">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:4px;letter-spacing:0.08em">W</div>
+            <input type="number" id="input-w" value="1080" min="360" max="3840" step="2"
+              style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:12px;padding:6px 8px;outline:none">
+          </div>
+          <div style="display:flex;align-items:flex-end;padding-bottom:6px;color:var(--muted);font-size:12px">×</div>
+          <div style="flex:1">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:4px;letter-spacing:0.08em">H</div>
+            <input type="number" id="input-h" value="1920" min="360" max="3840" step="2"
+              style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:12px;padding:6px 8px;outline:none">
+          </div>
+          <div style="display:flex;align-items:flex-end;padding-bottom:2px">
+            <button id="btn-lock-ratio" title="Lock aspect ratio"
+              style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;color:var(--muted);cursor:pointer;font-size:13px;width:30px;height:30px;display:flex;align-items:center;justify-content:center">🔓</button>
+          </div>
+        </div>
+        <div id="size-presets" style="display:flex;flex-wrap:wrap;gap:5px"></div>
+      </div>
+    </div>
+
+    <div class="sidebar-actions">
+      <button class="btn btn-primary" id="btn-preview" disabled>Preview Animation</button>
+      <button class="btn btn-export" id="btn-export" disabled>Export MP4</button>
+    </div>
+
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main-area" id="main-area">
+
+    <!-- Empty state (shown when no images) -->
+    <div class="empty-state" id="empty-state">
+      <div class="icon">🎞</div>
+      <h2>Build Your Reel</h2>
+      <p>Upload 2-50 photos. They'll flow through a cinematic 9:16 card animation — ready to share as a Story or Reel.</p>
+    </div>
+
+    <!-- Canvas preview -->
+    <div id="canvas-container" style="display:none">
+      <canvas id="preview-canvas"></canvas>
+    </div>
+
+    <!-- Playback controls -->
+    <div class="controls" id="playback-controls" style="display:none">
+      <button class="ctrl-btn" id="btn-restart" title="Restart">⟲</button>
+      <button class="ctrl-btn" id="btn-play" title="Play / Pause">▶</button>
+      <div class="ctrl-divider"></div>
+      <div class="timeline">
+        <span id="time-current">0.0s</span>
+        <input type="range" id="timeline-scrub" min="0" max="100" value="0" step="0.1">
+        <span id="time-total">0.0s</span>
+      </div>
+      <div class="ctrl-divider"></div>
+      <span class="loop-label on" id="loop-toggle" title="Toggle loop">↺ Loop</span>
+    </div>
+
+  </main>
+</div>
+
+<!-- Export overlay -->
+<div id="export-overlay">
+  <div class="export-panel">
+    <div class="spinner"></div>
+    <h3>Exporting Reel</h3>
+    <p>Rendering frames at full resolution.<br>This may take a moment.</p>
+    <div class="progress-track"><div id="progress-fill"></div></div>
+    <div id="progress-label">0%</div>
+    <button id="export-cancel">Cancel</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script type="module">
+// ────────────────────────────────────────────────────────
+//  DIMENSIONS  (mutable — user can change)
+// ────────────────────────────────────────────────────────
+let CW = 1080;
+let CH = 1920;
+const FPS = 60;
+const BASE_STEP = 54.36;
+
+// Slot positions are expressed as fractions of the 1080×1920 reference canvas
+// so they scale correctly when CW/CH change.
+const SLOT_FRACS = {
+  R2: { x: 1160/1080, y: 1730/1920 },
+  R1: { x:  866/1080, y: 1377/1920 },
+  C:  { x:  540/1080, y:  965/1920 },
+  L1: { x:  214/1080, y:  553/1920 },
+  L2: { x:  -80/1080, y:  200/1920 },
+};
+// Card size as fraction of reference
+const CARD_W_FRAC = 388/1080;
+const CARD_H_FRAC = 486/1920;
+
+// Computed from current CW/CH
+let SLOTS = {};
+let CARD_W = 388;
+let CARD_H = 486;
+
+function recomputeSlots() {
+  for (const [k, f] of Object.entries(SLOT_FRACS)) {
+    SLOTS[k] = { x: f.x * CW, y: f.y * CH };
+  }
+  CARD_W = Math.round(CARD_W_FRAC * CW);
+  CARD_H = Math.round(CARD_H_FRAC * CH);
+}
+recomputeSlots();
+
+// Color palette — pairs that each card transitions between
+const PALETTE = [
+  ['#ff3c00', '#ff3c00'],   // cyan → lime
+  ['#ff3c00', '#ff3c00'],   // orange → purple
+  ['#1a1a1a', '#ff3c00'],   // blue → cyan
+  ['#1a1a1a', '#f7f7f7'],   // dark green → lime
+  ['#f7f7f7', '#ff3c00'],   // yellow → orange
+  ['#ff3c00', '#ff3c00'],   // purple → teal
+  ['#1a1a1a', '#ff3c00'],   // blue → cyan
+  ['#ff3c00', '#ff3c00'],   // pink → gold
+  ['#1a1a1a', '#ff3c00'],   // sky → coral
+];
+
+// ────────────────────────────────────────────────────────
+//  STATE
+// ────────────────────────────────────────────────────────
+let images = [];           // HTMLImageElement[]
+const MAX_IMAGES = 50;
+let frame = 0;
+let totalFrames = 0;
+let isPlaying = false;
+let isLooping = true;
+let rafId = null;
+let lastTs = null;
+let acc = 0;
+let STEP = BASE_STEP;      // adjusted by speed setting
+let bgColor = '#f7f7f7';
+let cornerR = 12;
+let exportAborted = false;
+let isScrubbing = false;
+
+// ────────────────────────────────────────────────────────
+//  EASING
+// ────────────────────────────────────────────────────────
+const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+const lerp = (a, b, t) => a + (b - a) * clamp(t, 0, 1);
+
+function easeOut3(t) { const s = 1 - clamp(t,0,1); return 1 - s*s*s; }
+function easeIn2(t)  { return clamp(t,0,1) ** 2; }
+function easeInOut(t) {
+  t = clamp(t,0,1);
+  return t < 0.5 ? 2*t*t : -1 + (4 - 2*t)*t;
+}
+// The sharp "rush in" ease from the Lottie (o.y=0 = linear start, i.y~1 = near-stop arrival)
+function rushIn(t) {
+  t = clamp(t,0,1);
+  // cubic bezier approximation of o:{x:0.82,y:0} i:{x:0.343,y:0.954}
+  // Starts fast (easeIn character), decelerates sharply at end
+  return easeOut3(t);
+}
+// Ease from peak scale down (settling)
+function settleEase(t) {
+  t = clamp(t,0,1);
+  // easeOut — starts fast drop, slow end
+  return 1 - (1 - t) ** 2.5;
+}
+
+// Parse hex color → {r,g,b}
+function parseHex(hex) {
+  const r = parseInt(hex.slice(1,3),16);
+  const g = parseInt(hex.slice(3,5),16);
+  const b = parseInt(hex.slice(5,7),16);
+  return {r,g,b};
+}
+function lerpColor(c1, c2, t) {
+  const a = parseHex(c1), b = parseHex(c2);
+  t = clamp(t,0,1);
+  return `rgb(${Math.round(lerp(a.r,b.r,t))},${Math.round(lerp(a.g,b.g,t))},${Math.round(lerp(a.b,b.b,t))})`;
+}
+
+// ────────────────────────────────────────────────────────
+//  CARD TRANSFORM
+// ────────────────────────────────────────────────────────
+/*
+  Timeline for card k (dt = frame - k*STEP):
+
+  dt ∈ (-2.5S, -S)  → entering: R2 ➜ R1  (scale 0.15 → 1.0, opacity builds)
+  dt ∈ (-S,   0)    → blooming: R1 ➜ C   (scale 1.0 → 1.85, moves to center)
+  dt ∈ (0,    S)    → settling: C  ➜ L1  (scale 1.85 → 1.0, card eases left)
+  dt ∈ (S,    2.5S) → exiting:  L1 ➜ L2  (scale 1.0 → 0.1, fade out)
+*/
+function getTransform(k, f) {
+  const dt = f - k * STEP;
+
+  if (dt < -2.5 * STEP || dt > 2.6 * STEP) return null;
+
+  let x, y, scale, opacity;
+
+  if (dt < -STEP) {
+    // Entering: R2 → R1
+    const t = (dt + 2 * STEP) / STEP;
+    x = lerp(SLOTS.R2.x, SLOTS.R1.x, easeOut3(t));
+    y = lerp(SLOTS.R2.y, SLOTS.R1.y, easeOut3(t));
+    scale   = lerp(0.1, 1.0, easeOut3(t));
+    opacity = lerp(0,   0.55, easeOut3(t));
+  } else if (dt < 0) {
+    // Blooming: R1 → C (card rushes toward viewer)
+    const t = (dt + STEP) / STEP;   // 0 → 1
+    x = lerp(SLOTS.R1.x, SLOTS.C.x, rushIn(t));
+    y = lerp(SLOTS.R1.y, SLOTS.C.y, rushIn(t));
+    // Scale grows from 1.0 to peak 1.85 as it arrives at center
+    scale   = 1.0 + 0.85 * easeIn2(t);
+    opacity = 1;
+  } else if (dt < STEP) {
+    // Settling: card at/near C, drifts left to L1 while scale drops
+    const t = dt / STEP;    // 0 → 1
+    x = lerp(SLOTS.C.x, SLOTS.L1.x, easeInOut(t));
+    y = lerp(SLOTS.C.y, SLOTS.L1.y, easeInOut(t));
+    // Scale settles: 1.85 → 1.0
+    scale   = 1.0 + 0.85 * (1 - settleEase(t));
+    opacity = 1;
+  } else {
+    // Exiting: L1 → L2 (shrinks and fades)
+    const t = (dt - STEP) / (1.5 * STEP);
+    x = lerp(SLOTS.L1.x, SLOTS.L2.x, easeIn2(t));
+    y = lerp(SLOTS.L1.y, SLOTS.L2.y, easeIn2(t));
+    scale   = lerp(1.0, 0.08, easeIn2(t));
+    opacity = lerp(1,   0,    t * 1.4);
+  }
+
+  return { x, y, scale, opacity };
+}
+
+// Color for card k at frame f
+function getColor(k, f) {
+  const [c1, c2] = PALETTE[k % PALETTE.length];
+  const dt = f - k * STEP;
+  // Transition from c1 to c2 during the settling phase (0 → STEP)
+  if (dt <= 0) return c1;
+  if (dt >= STEP) return c2;
+  return lerpColor(c1, c2, dt / STEP);
+}
+
+// Image opacity — image fades in/out within the card
+// Full image opacity at center pass (dt=0), fades out by dt=Â±STEP
+function getImageOpacity(k, f) {
+  const dt = f - k * STEP;
+  const range = STEP * 1.2;
+  if (dt < -range || dt > range) return 0;
+  // Bell curve: peak at dt=0
+  const norm = dt / range;
+  return Math.max(0, 1 - norm * norm);
+}
+
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  DRAW CARD
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+function drawRoundedRect(ctx, x, y, w, h, r) {
+  r = Math.min(r, w / 2, h / 2);
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y,     x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x,     y + h, r);
+  ctx.arcTo(x,     y + h, x,     y,     r);
+  ctx.arcTo(x,     y,     x + w, y,     r);
+  ctx.closePath();
+}
+
+function drawCard(ctx, tf, img, color, imgOpacity) {
+  const { x, y, scale, opacity } = tf;
+  if (opacity <= 0) return;
+
+  ctx.save();
+  ctx.globalAlpha = opacity;
+  ctx.translate(x, y);
+  ctx.scale(scale, scale);
+
+  const hw = CARD_W / 2, hh = CARD_H / 2;
+
+  // Shadow (scales with card size for depth)
+  ctx.shadowColor  = 'rgba(26,26,26,0.28)';
+  ctx.shadowBlur   = 50;
+  ctx.shadowOffsetX = 4;
+  ctx.shadowOffsetY = 18;
+
+  // Background color fill
+  ctx.fillStyle = color;
+  drawRoundedRect(ctx, -hw, -hh, CARD_W, CARD_H, cornerR);
+  ctx.fill();
+
+  ctx.shadowColor = 'transparent';
+  ctx.shadowBlur  = 0;
+
+  // Image (clipped to card shape)
+  if (img && imgOpacity > 0.01) {
+    ctx.save();
+    drawRoundedRect(ctx, -hw, -hh, CARD_W, CARD_H, cornerR);
+    ctx.clip();
+
+    const iw = img.naturalWidth  || img.width;
+    const ih = img.naturalHeight || img.height;
+    const s  = Math.max(CARD_W / iw, CARD_H / ih);
+    const dw = iw * s, dh = ih * s;
+
+    ctx.globalAlpha = clamp(imgOpacity, 0, 1);
+    ctx.drawImage(img, -dw / 2, -dh / 2, dw, dh);
+    ctx.restore();
+  }
+
+  ctx.restore();
+}
+
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  RENDER FRAME
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+function render(canvas, f) {
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, CW, CH);
+
+  // Background
+  ctx.fillStyle = bgColor;
+  ctx.fillRect(0, 0, CW, CH);
+
+  const n = images.length;
+
+  // Collect visible cards
+  const cards = [];
+  for (let k = 0; k < n; k++) {
+    const tf = getTransform(k, f);
+    if (!tf) continue;
+    cards.push({ k, tf });
+  }
+
+  // Draw order: sort by y so cards lower on screen appear behind
+  // The center card (highest scale) should always be on top
+  cards.sort((a, b) => {
+    // The "active" center card (closest to peak, dt ~ 0) goes last (on top)
+    const dtA = Math.abs(f - a.k * STEP);
+    const dtB = Math.abs(f - b.k * STEP);
+    // Cards in bloom/settle phase are on top, others sorted by y
+    if (dtA < STEP && dtB >= STEP) return 1;
+    if (dtB < STEP && dtA >= STEP) return -1;
+    return b.tf.y - a.tf.y;
+  });
+
+  for (const { k, tf } of cards) {
+    const color      = getColor(k, f);
+    const imgOpacity = getImageOpacity(k, f);
+    drawCard(ctx, tf, images[k], color, imgOpacity);
+  }
+}
+
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  ANIMATION LOOP
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+function tick(ts) {
+  if (!isPlaying) return;
+  if (!lastTs) lastTs = ts;
+  acc += ts - lastTs;
+  lastTs = ts;
+
+  const frameDur = 1000 / FPS;
+  while (acc >= frameDur) {
+    frame++;
+    acc -= frameDur;
+  }
+
+  if (frame >= totalFrames) {
+    if (isLooping) {
+      frame = 0;
+    } else {
+      frame = totalFrames - 1;
+      pause();
+    }
+  }
+
+  renderPreview();
+  updateScrubber();
+  rafId = requestAnimationFrame(tick);
+}
+
+function play() {
+  if (isPlaying) return;
+  isPlaying = true;
+  lastTs = null;
+  acc = 0;
+  document.getElementById('btn-play').textContent = '⏸';
+  rafId = requestAnimationFrame(tick);
+}
+
+function pause() {
+  isPlaying = false;
+  if (rafId) cancelAnimationFrame(rafId);
+  document.getElementById('btn-play').textContent = '▶';
+}
+
+function restart() {
+  frame = 0;
+  renderPreview();
+  updateScrubber();
+  if (!isPlaying) play();
+}
+
+// ────────────────────────────────────────────────────────
+//  PREVIEW CANVAS  (scaled to fit screen)
+// ────────────────────────────────────────────────────────
+let previewCanvas, previewCtx, offscreen;
+
+function initCanvas() {
+  previewCanvas = document.getElementById('preview-canvas');
+  previewCanvas.width  = CW;
+  previewCanvas.height = CH;
+
+  // Scale to fit available space (max 1:1 — no upscaling)
+  const mainArea = document.getElementById('main-area');
+  const availH   = mainArea.clientHeight - 90;
+  const availW   = mainArea.clientWidth  - 56;
+  const scaleF   = Math.min(availW / CW, availH / CH, 1);
+
+  previewCanvas.style.width  = Math.round(CW * scaleF) + 'px';
+  previewCanvas.style.height = Math.round(CH * scaleF) + 'px';
+}
+
+function renderPreview() {
+  if (!previewCanvas) return;
+  render(previewCanvas, frame);
+}
+
+function updateScrubber() {
+  const scrub = document.getElementById('timeline-scrub');
+  if (!isScrubbing) scrub.value = (frame / totalFrames * 100).toFixed(1);
+  document.getElementById('time-current').textContent =
+    (frame / FPS).toFixed(1) + 's';
+}
+
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  SETUP (images loaded)
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+function setupAnimation() {
+  const n = images.length;
+  if (n < 2) return;
+
+  // Total frames: first card centre at 0, last card centre at (n-1)*STEP,
+  // then allow one more STEP for it to clear the screen
+  totalFrames = Math.ceil((n + 1) * STEP) + 20;
+
+  document.getElementById('time-total').textContent =
+    (totalFrames / FPS).toFixed(1) + 's';
+
+  const scrub = document.getElementById('timeline-scrub');
+  scrub.max = '100';
+
+  frame = 0;
+  initCanvas();
+
+  document.getElementById('empty-state').style.display     = 'none';
+  document.getElementById('canvas-container').style.display = 'block';
+  document.getElementById('playback-controls').style.display = 'flex';
+
+  document.getElementById('btn-preview').textContent = 'Play Animation';
+  document.getElementById('btn-preview').disabled    = false;
+  document.getElementById('btn-export').disabled     = false;
+
+  renderPreview();
+  updateScrubber();
+}
+
+// ────────────────────────────────────────────────────────
+//  EXPORT — VideoEncoder + mp4-muxer
+// ────────────────────────────────────────────────────────
+async function exportMP4() {
+  // Dynamically import mp4-muxer
+  let Muxer, ArrayBufferTarget;
+  try {
+    const mod = await import('https://cdn.jsdelivr.net/npm/mp4-muxer@5/build/mp4-muxer.mjs');
+    Muxer = mod.Muxer;
+    ArrayBufferTarget = mod.ArrayBufferTarget;
+  } catch (e) {
+    // Fallback to MediaRecorder if CDN unavailable
+    exportWithMediaRecorder();
+    return;
+  }
+
+  if (!('VideoEncoder' in window)) {
+    exportWithMediaRecorder();
+    return;
+  }
+
+  pause();
+  exportAborted = false;
+  showExportOverlay();
+
+  // Offscreen canvas at full res
+  const offC = document.createElement('canvas');
+  offC.width = CW; offC.height = CH;
+
+  const target = new ArrayBufferTarget();
+  const muxer  = new Muxer({
+    target,
+    video: { codec: 'avc', width: CW, height: CH },
+    fastStart: 'in-memory',
+  });
+
+  const encoder = new VideoEncoder({
+    output: (chunk, meta) => muxer.addVideoChunk(chunk, meta),
+    error: (e) => { showToast('Encoding error: ' + e.message); hideExportOverlay(); },
+  });
+
+  // avc1.640029 = H.264 High Profile Level 4.1 — supports up to 2,228,224 px (fits 1080×1920)
+  // avc1.640032 = H.264 High Profile Level 5.0 — wider support fallback
+  const avcCodec = (await VideoEncoder.isConfigSupported({
+    codec: 'avc1.640029', width: CW, height: CH, bitrate: 10_000_000, framerate: FPS
+  })).supported ? 'avc1.640029' : 'avc1.640032';
+
+  encoder.configure({
+    codec: avcCodec,
+    width: CW,
+    height: CH,
+    bitrate: 10_000_000,
+    framerate: FPS,
+    latencyMode: 'quality',
+  });
+
+  const total = totalFrames;
+  let f = 0;
+
+  function encodeNext() {
+    if (exportAborted) {
+      encoder.close();
+      hideExportOverlay();
+      return;
+    }
+
+    if (f >= total) {
+      // Finalize
+      encoder.flush().then(() => {
+        muxer.finalize();
+        const buf  = target.buffer;
+        const blob = new Blob([buf], { type: 'video/mp4' });
+        const url  = URL.createObjectURL(blob);
+        const a    = document.createElement('a');
+        a.href     = url;
+        a.download = `reel-${Date.now()}.mp4`;
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 5000);
+        hideExportOverlay();
+        showToast('Reel exported!');
+      });
+      return;
+    }
+
+    render(offC, f);
+
+    const vf = new VideoFrame(offC, {
+      timestamp: Math.round((f / FPS) * 1_000_000),
+      duration:  Math.round(1_000_000 / FPS),
+    });
+    encoder.encode(vf, { keyFrame: f % (FPS * 2) === 0 });
+    vf.close();
+
+    setProgress(f / total);
+    f++;
+
+    // Yield every N frames to keep UI responsive
+    if (f % 4 === 0) {
+      setTimeout(encodeNext, 0);
+    } else {
+      encodeNext();
+    }
+  }
+
+  encodeNext();
+}
+
+// Fallback: MediaRecorder
+function exportWithMediaRecorder() {
+  pause();
+  exportAborted = false;
+  showExportOverlay();
+
+  const offC = document.createElement('canvas');
+  offC.width = CW; offC.height = CH;
+
+  const stream = offC.captureStream(FPS);
+  
+  // Try MP4-capable codecs first, then fallback to WebM
+  const types  = ['video/mp4;codecs=h264', 'video/mp4;codecs=hev1', 'video/webm;codecs=h264', 'video/webm;codecs=vp9', 'video/webm'];
+  const mime   = types.find(t => MediaRecorder.isTypeSupported(t)) || 'video/webm';
+  
+  const rec    = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 10_000_000 });
+  const chunks = [];
+
+  rec.ondataavailable = e => chunks.push(e.data);
+  rec.onstop = () => {
+    const blob = new Blob(chunks, { type: mime });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    
+    // Use appropriate extension based on actual mime type
+    const extension = mime.startsWith('video/mp4') ? 'mp4' : 'webm';
+    a.download = `reel-${Date.now()}.${extension}`;
+    
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+    
+    // Show appropriate message
+    const formatMessage = extension === 'mp4' ? 'MP4 video exported!' : 'WebM video exported (browser limitation)';
+    hideExportOverlay();
+    showToast(formatMessage);
+  };
+
+  rec.start();
+
+  let f = 0;
+  const total = totalFrames;
+  const interval = 1000 / FPS;
+
+  function nextFrame() {
+    if (exportAborted) { rec.stop(); return; }
+    if (f >= total)    { setTimeout(() => rec.stop(), 200); return; }
+    render(offC, f);
+    setProgress(f / total);
+    f++;
+    setTimeout(nextFrame, interval);
+  }
+
+  nextFrame();
+}
+
+function showExportOverlay() {
+  document.getElementById('export-overlay').classList.add('visible');
+  document.getElementById('progress-fill').style.width = '0%';
+  document.getElementById('progress-label').textContent = '0%';
+}
+function hideExportOverlay() {
+  document.getElementById('export-overlay').classList.remove('visible');
+}
+function setProgress(p) {
+  document.getElementById('progress-fill').style.width  = (p * 100).toFixed(0) + '%';
+  document.getElementById('progress-label').textContent = (p * 100).toFixed(0) + '%';
+}
+
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  TOAST
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+let toastTimer;
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2800);
+}
+
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  IMAGE LOADING
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+function loadImage(file) {
+  return new Promise((res, rej) => {
+    const img = new Image();
+    img.onload  = () => res(img);
+    img.onerror = rej;
+    img.src = URL.createObjectURL(file);
+  });
+}
+
+async function addFiles(files) {
+  const allowed = Array.from(files).filter(f => f.type.startsWith('image/'));
+  const space   = MAX_IMAGES - images.length;
+  if (space <= 0) { showToast(`Max ${MAX_IMAGES} images`); return; }
+  const toLoad  = allowed.slice(0, space);
+  const loaded  = await Promise.all(toLoad.map(loadImage));
+  images.push(...loaded);
+  rebuildSequenceGrid();
+  if (images.length >= 2) setupAnimation();
+  document.getElementById('btn-preview').disabled = images.length < 2;
+}
+
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  SEQUENCE GRID
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+let dragSrcIdx = null;
+
+function rebuildSequenceGrid() {
+  const grid = document.getElementById('sequence-grid');
+  grid.innerHTML = '';
+
+  images.forEach((img, i) => {
+    const item = document.createElement('div');
+    item.className   = 'thumb-item';
+    item.draggable   = true;
+    item.dataset.idx = i;
+
+    const imgEl  = document.createElement('img');
+    imgEl.src    = img.src;
+
+    const numEl        = document.createElement('div');
+    numEl.className    = 'thumb-num';
+    numEl.textContent  = i + 1;
+
+    const rmEl       = document.createElement('div');
+    rmEl.className   = 'thumb-remove';
+    rmEl.textContent = 'Ã—';
+    rmEl.addEventListener('click', e => {
+      e.stopPropagation();
+      images.splice(i, 1);
+      rebuildSequenceGrid();
+      if (images.length < 2) {
+        document.getElementById('btn-preview').disabled = true;
+        document.getElementById('btn-export').disabled  = true;
+        pause();
+        frame = 0;
+      } else {
+        setupAnimation();
+      }
+    });
+
+    item.appendChild(imgEl);
+    item.appendChild(numEl);
+    item.appendChild(rmEl);
+
+    // Drag events
+    item.addEventListener('dragstart', e => {
+      dragSrcIdx = i;
+      item.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    });
+    item.addEventListener('dragend', () => {
+      item.classList.remove('dragging');
+      document.querySelectorAll('.thumb-item').forEach(el => el.classList.remove('drag-target'));
+    });
+    item.addEventListener('dragover', e => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      document.querySelectorAll('.thumb-item').forEach(el => el.classList.remove('drag-target'));
+      item.classList.add('drag-target');
+    });
+    item.addEventListener('drop', e => {
+      e.preventDefault();
+      if (dragSrcIdx === null || dragSrcIdx === i) return;
+      const moved = images.splice(dragSrcIdx, 1)[0];
+      images.splice(i, 0, moved);
+      dragSrcIdx = null;
+      rebuildSequenceGrid();
+      setupAnimation();
+    });
+
+    grid.appendChild(item);
+  });
+
+  // Placeholder slots
+  const remaining = MAX_IMAGES - images.length;
+  for (let i = 0; i < Math.min(remaining, MAX_IMAGES - images.length); i++) {
+    const ph = document.createElement('div');
+    ph.className = 'thumb-placeholder';
+    ph.textContent = '+';
+    ph.addEventListener('click', () => document.getElementById('file-input').click());
+    grid.appendChild(ph);
+  }
+
+  const note = document.getElementById('seq-note');
+  const count = document.getElementById('seq-count');
+  count.textContent = images.length ? `(${images.length}/${MAX_IMAGES})` : '';
+  note.textContent  = images.length >= 2
+    ? 'Drag to reorder. Click Ã— to remove.'
+    : 'Add at least 2 images to build your reel.';
+}
+
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//  EVENT WIRING
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+document.addEventListener('DOMContentLoaded', () => {
+  rebuildSequenceGrid();
+
+  // Drop zone
+  const dz = document.getElementById('drop-zone');
+  dz.addEventListener('click', () => document.getElementById('file-input').click());
+  dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('drag-over'); });
+  dz.addEventListener('dragleave', () => dz.classList.remove('drag-over'));
+  dz.addEventListener('drop', e => {
+    e.preventDefault();
+    dz.classList.remove('drag-over');
+    addFiles(e.dataTransfer.files);
+  });
+
+  document.getElementById('file-input').addEventListener('change', e => {
+    addFiles(e.target.files);
+    e.target.value = '';
+  });
+
+  // Preview button
+  document.getElementById('btn-preview').addEventListener('click', () => {
+    if (isPlaying) pause(); else { frame = 0; play(); }
+  });
+
+  // Export button
+  document.getElementById('btn-export').addEventListener('click', () => {
+    exportMP4();
+  });
+
+  // Playback controls
+  document.getElementById('btn-play').addEventListener('click', () => {
+    if (isPlaying) pause(); else play();
+  });
+  document.getElementById('btn-restart').addEventListener('click', restart);
+
+  document.getElementById('loop-toggle').addEventListener('click', () => {
+    isLooping = !isLooping;
+    const el = document.getElementById('loop-toggle');
+    el.textContent = isLooping ? 'â†º Loop' : 'â†º Loop';
+    el.classList.toggle('on', isLooping);
+  });
+
+  // Scrubber
+  const scrub = document.getElementById('timeline-scrub');
+  scrub.addEventListener('mousedown', () => { isScrubbing = true; pause(); });
+  scrub.addEventListener('input', () => {
+    frame = Math.round(scrub.value / 100 * totalFrames);
+    renderPreview();
+    document.getElementById('time-current').textContent = (frame / FPS).toFixed(1) + 's';
+  });
+  scrub.addEventListener('mouseup', () => {
+    isScrubbing = false;
+    play();
+  });
+
+  // Background color picker + swatches
+  const bgSwatchColors = ['#f7f7f7','#f7f7f7','#1a1a1a','#1a1a1a','#1a1a1a','#1a1a1a','#1a1a1a','#ff3c00'];
+  const swatchContainer = document.getElementById('bg-swatches');
+  bgSwatchColors.forEach(c => {
+    const s = document.createElement('div');
+    s.style.cssText = `width:18px;height:18px;border-radius:4px;background:${c};cursor:pointer;border:1.5px solid rgba(247,247,247,0.12);flex-shrink:0;transition:transform 0.1s`;
+    s.title = c;
+    s.addEventListener('click', () => {
+      bgColor = c;
+      document.getElementById('bg-picker').value = c;
+      renderPreview();
+    });
+    s.addEventListener('mouseenter', () => s.style.transform = 'scale(1.2)');
+    s.addEventListener('mouseleave', () => s.style.transform = '');
+    swatchContainer.appendChild(s);
+  });
+  document.getElementById('bg-picker').addEventListener('input', e => {
+    bgColor = e.target.value;
+    renderPreview();
+  });
+  document.getElementById('speed-slider').addEventListener('input', e => {
+    const speed = parseFloat(e.target.value);
+    document.getElementById('speed-value').textContent = speed.toFixed(2) + 'x';
+    STEP = BASE_STEP / speed;
+    setupAnimation();
+  });
+  document.getElementById('radius-select').addEventListener('change', e => {
+    cornerR = parseInt(e.target.value);
+    renderPreview();
+  });
+
+  // Export cancel
+  document.getElementById('export-cancel').addEventListener('click', () => {
+    exportAborted = true;
+    hideExportOverlay();
+  });
+
+  // â”€â”€ Canvas size â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  const SIZE_PRESETS = [
+    { label: '9:16', w: 1080, h: 1920 },
+    { label: '4:5',  w: 1080, h: 1350 },
+    { label: '1:1',  w: 1080, h: 1080 },
+    { label: '16:9', w: 1920, h: 1080 },
+    { label: '4:3',  w: 1080, h: 810  },
+  ];
+
+  // Build preset pills
+  const presetsEl = document.getElementById('size-presets');
+  SIZE_PRESETS.forEach(p => {
+    const btn = document.createElement('button');
+    btn.textContent = p.label;
+    btn.dataset.w = p.w;
+    btn.dataset.h = p.h;
+    btn.style.cssText = `background:var(--surface2);border:1px solid var(--border);border-radius:20px;
+      color:var(--muted);font-size:10px;padding:4px 10px;cursor:pointer;
+      letter-spacing:0.08em;transition:background 0.15s,color 0.15s`;
+    btn.addEventListener('mouseenter', () => { btn.style.color = 'var(--text)'; btn.style.borderColor = '#1a1a1a'; });
+    btn.addEventListener('mouseleave', () => { if (!btn.classList.contains('active-preset')) { btn.style.color = 'var(--muted)'; btn.style.borderColor = 'var(--border)'; } });
+    btn.addEventListener('click', () => applyDimensions(+btn.dataset.w, +btn.dataset.h));
+    presetsEl.appendChild(btn);
+  });
+
+  function highlightPreset(w, h) {
+    presetsEl.querySelectorAll('button').forEach(b => {
+      const match = +b.dataset.w === w && +b.dataset.h === h;
+      b.style.background    = match ? 'var(--accent)' : 'var(--surface2)';
+      b.style.color         = match ? '#1a1a1a'          : 'var(--muted)';
+      b.style.borderColor   = match ? 'var(--accent)'  : 'var(--border)';
+      b.style.fontWeight    = match ? '700'            : '400';
+      b.classList.toggle('active-preset', match);
+    });
+  }
+
+  let lockRatio = false;
+  let lockedRatio = CW / CH;
+
+  document.getElementById('btn-lock-ratio').addEventListener('click', () => {
+    lockRatio = !lockRatio;
+    lockedRatio = CW / CH;
+    document.getElementById('btn-lock-ratio').textContent = lockRatio ? '🔒' : '🔓';
+    document.getElementById('btn-lock-ratio').style.color = lockRatio ? 'var(--accent)' : 'var(--muted)';
+  });
+
+  function applyDimensions(w, h) {
+    w = Math.max(360, Math.min(3840, Math.round(w / 2) * 2));
+    h = Math.max(360, Math.min(3840, Math.round(h / 2) * 2));
+    CW = w; CH = h;
+    recomputeSlots();
+    document.getElementById('input-w').value = w;
+    document.getElementById('input-h').value = h;
+    document.getElementById('dim-badge').textContent =
+      `${w < h ? w+':'+h : w+':'+h} Â· 60fps Â· ${w}Ã—${h}`;
+    highlightPreset(w, h);
+    if (images.length >= 2) { setupAnimation(); } else { renderPreview(); }
+  }
+
+  document.getElementById('input-w').addEventListener('change', e => {
+    let w = parseInt(e.target.value) || CW;
+    let h = lockRatio ? Math.round(w / lockedRatio) : CH;
+    applyDimensions(w, h);
+  });
+  document.getElementById('input-h').addEventListener('change', e => {
+    let h = parseInt(e.target.value) || CH;
+    let w = lockRatio ? Math.round(h * lockedRatio) : CW;
+    applyDimensions(w, h);
+  });
+
+  // Focus styling for number inputs
+  ['input-w','input-h'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('focus', () => el.style.borderColor = 'var(--accent)');
+    el.addEventListener('blur',  () => el.style.borderColor = 'var(--border)');
+    el.addEventListener('keydown', e => { if (e.key === 'Enter') el.blur(); });
+  });
+
+  highlightPreset(1080, 1920); // default
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+    if (e.code === 'Space') {
+      e.preventDefault();
+      if (isPlaying) pause(); else play();
+    }
+    if (e.code === 'KeyR') restart();
+    if (e.code === 'KeyL') document.getElementById('loop-toggle').click();
+  });
+
+  // Resize: recalc canvas scale
+  const resizeObs = new ResizeObserver(() => {
+    if (images.length >= 2) initCanvas();
+  });
+  resizeObs.observe(document.getElementById('main-area'));
+});
+// Theme Toggle Functionality
+class ThemeManager {
+  constructor() {
+    this.themeToggle = document.getElementById('theme-toggle');
+    this.themeIcon = document.getElementById('theme-icon');
+    this.html = document.documentElement;
+    
+    this.init();
+  }
+
+  init() {
+    // Load saved theme or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    this.setTheme(savedTheme);
+    
+    // Add click listener
+    this.themeToggle.addEventListener('click', () => {
+      this.toggleTheme();
+    });
+  }
+
+  setTheme(theme) {
+    this.html.setAttribute('data-theme', theme);
+    document.body.setAttribute('data-theme', theme);
+    this.updateIcon(theme);
+    localStorage.setItem('theme', theme);
+  }
+
+  toggleTheme() {
+    const currentTheme = this.html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    this.setTheme(newTheme);
+  }
+
+  updateIcon(theme) {
+    this.themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+  }
+}
+
+// Initialize theme manager
+document.addEventListener('DOMContentLoaded', () => {
+  new ThemeManager();
+});
+</script>
+</body>
+</html>
