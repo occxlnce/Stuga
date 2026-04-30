@@ -1,4 +1,4 @@
-# Stuga Studio - Professional UI Tools & Video Creators
+# Studio Gallery - Professional UI Tools & Video Creators
 
 ![Stuga Studio](https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png)
 
