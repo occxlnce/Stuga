@@ -1,4 +1,4 @@
-# Studio Gallery - Professional UI Tools & Video Creators
+# Stuga Studio - Professional UI Tools & Video Creators
 
 ![Stuga Studio](https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png)
 
@@ -118,11 +118,12 @@ https://stuga.studio/card-studio
 ## 📚 Documentation
 
 ### User Guides
-- [Getting Started Guide]([https://stugallery.netlify.app/support)
-- [FAQ Section](https://stugallery.netlify.app/support#faq)
-- [About Stuga Studio](https://stugallery.netlify.app/about)
+- [Getting Started Guide](https://stuga.studio/support)
+- [FAQ Section](https://stuga.studio/support#faq)
+- [About Stuga Studio](https://stuga.studio/about)
 
 ### Technical Documentation
+- [SEO Implementation](./SEO-IMPLEMENTATION.md)
 - [Sitemap](./sitemap.xml)
 - [Robots.txt](./robots.txt)
 
@@ -141,6 +142,7 @@ stuga/
 ├── sitemap.xml            # SEO sitemap
 ├── robots.txt             # Search engine instructions
 ├── README.md              # This file
+└── SEO-IMPLEMENTATION.md  # SEO documentation
 ```
 
 ### Technologies Used
@@ -197,8 +199,8 @@ Each tool supports multiple aspect ratios:
 
 ### Get Help
 - **Email**: [occxlnceoffice@gmail.com](mailto:occxlnceoffice@gmail.com)
-- **Support Page**: [stuga.studio/support](https://stugallery.netlify.app/support)
-- **FAQ**: [Frequently Asked Questions](https://stugallery.netlify.app/support#faq)
+- **Support Page**: [stuga.studio/support](https://stuga.studio/support)
+- **FAQ**: [Frequently Asked Questions](https://stuga.studio/support#faq)
 
 ### Common Issues
 - **Browser Compatibility**: Use latest browser version
@@ -281,8 +283,8 @@ We welcome feedback and suggestions! Here's how you can help:
 
 ### Get in Touch
 - **Email**: [occxlnceoffice@gmail.com](mailto:occxlnceoffice@gmail.com)
-- **Website**: [stuga.studio](https://stugallery.netlify.app)
-- **Support**: [stuga.studio/support](https://stugallery.netlify.app/support)
+- **Website**: [stuga.studio](https://stuga.studio)
+- **Support**: [stuga.studio/support](https://stuga.studio/support)
 
 ### Business Inquiries
 - **Partnerships**: Email for collaboration opportunities
@@ -307,7 +309,7 @@ We welcome feedback and suggestions! Here's how you can help:
 
 Ready to create something amazing? Start using Stuga Studio tools right now:
 
-**[Visit Stuga Studio](https://stugallery.netlify.app)**
+**[Visit Stuga Studio](https://stuga.studio)**
 
 *No download required • Completely free • Professional results*
 

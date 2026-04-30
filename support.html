@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -21,6 +21,8 @@
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
@@ -180,7 +182,7 @@ body {
 .support-icon {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, var(--accent), #ff6b35);
+  background: linear-gradient(135deg, var(--accent), #ff3c00);
   border-radius: 50%;
   margin: 0 auto 24px;
   display: flex;
@@ -203,7 +205,7 @@ body {
 .support-button {
   display: inline-block;
   background: var(--accent);
-  color: #fff;
+  color: #f7f7f7;
   padding: 12px 24px;
   border-radius: var(--radius);
   text-decoration: none;
@@ -211,7 +213,7 @@ body {
   transition: background 0.2s ease, transform 0.2s ease;
 }
 .support-button:hover {
-  background: #ff6b35;
+  background: #ff3c00;
   transform: translateY(-2px);
 }
 .support-button.secondary {
@@ -221,7 +223,7 @@ body {
 }
 .support-button.secondary:hover {
   background: var(--accent);
-  color: #fff;
+  color: #f7f7f7;
 }
 
 /* FAQ Section */
@@ -275,7 +277,7 @@ body {
   justify-content: center;
   border-radius: 50%;
   background: var(--accent);
-  color: #fff;
+  color: #f7f7f7;
   font-size: 14px;
   transition: transform 0.2s ease;
 }
@@ -298,7 +300,7 @@ body {
 /* Contact Section */
 .contact-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, var(--accent), #ff6b35);
+  background: linear-gradient(135deg, var(--accent), #ff3c00);
   border-radius: var(--radius);
   margin: 80px 0;
   text-align: center;
@@ -307,7 +309,7 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   font-size: clamp(32px, 4vw, 48px);
   font-weight: 700;
-  color: #fff;
+  color: #f7f7f7;
   margin-bottom: 24px;
 }
 .contact-text {
@@ -320,7 +322,7 @@ body {
 }
 .contact-email {
   display: inline-block;
-  background: #fff;
+  background: #f7f7f7;
   color: var(--accent);
   padding: 16px 32px;
   border-radius: var(--radius);
@@ -381,6 +383,29 @@ footer {
     text-align: center;
   }
 }
+
+/* Stuga heading font */
+:root { --font-heading: 'DynaPuff', system-ui, sans-serif; }
+h1, h2, h3,
+.logo h1,
+.card-title,
+.title,
+.title-mid,
+.title-small,
+.section-title,
+.hero-title,
+.tool-name,
+.value-title,
+.cta-title,
+.support-title,
+.contact-title,
+.empty-state h2,
+.export-panel h3,
+.sidebar-label {
+  font-family: var(--font-heading) !important;
+  font-weight: 700;
+  letter-spacing: 0 !important;
+}
 </style>
 </head>
 <body>
@@ -409,21 +434,21 @@ footer {
     <section class="support-options">
       <div class="support-grid">
         <div class="support-card">
-          <div class="support-icon">📧</div>
+          <div class="support-icon">ðŸ“§</div>
           <h2 class="support-title">Email Support</h2>
           <p class="support-description">Get direct help from our team via email. We typically respond within 24 hours.</p>
           <a href="mailto:occxlnceoffice@gmail.com" class="support-button">Send Email</a>
         </div>
         
         <div class="support-card">
-          <div class="support-icon">📚</div>
+          <div class="support-icon">ðŸ“š</div>
           <h2 class="support-title">Documentation</h2>
           <p class="support-description">Browse our comprehensive guides and tutorials for each tool.</p>
           <a href="#faq" class="support-button secondary">View FAQs</a>
         </div>
         
         <div class="support-card">
-          <div class="support-icon">🎥</div>
+          <div class="support-icon">ðŸŽ¥</div>
           <h2 class="support-title">Video Tutorials</h2>
           <p class="support-description">Watch step-by-step video guides to master our tools quickly.</p>
           <a href="#tutorials" class="support-button secondary">Coming Soon</a>
@@ -540,7 +565,7 @@ footer {
       </div>
     </div>
     <div class="footer-copyright">
-      © 2024 Stuga Studio. All rights reserved.
+      Â© 2024 Stuga Studio. All rights reserved.
     </div>
   </div>
 </footer>

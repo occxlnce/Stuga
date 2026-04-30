@@ -6,6 +6,8 @@
 <title>Project Teaser Studio - Graphic Panel Reveal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
@@ -207,6 +209,29 @@ select,
 header,
 .sidebar,
 .controls { border-color: #1a1a1a !important; }
+
+/* Stuga heading font */
+:root { --font-heading: 'DynaPuff', system-ui, sans-serif; }
+h1, h2, h3,
+.logo h1,
+.card-title,
+.title,
+.title-mid,
+.title-small,
+.section-title,
+.hero-title,
+.tool-name,
+.value-title,
+.cta-title,
+.support-title,
+.contact-title,
+.empty-state h2,
+.export-panel h3,
+.sidebar-label {
+  font-family: var(--font-heading) !important;
+  font-weight: 700;
+  letter-spacing: 0 !important;
+}
 </style>
 </head>
 <body data-theme="dark">

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -21,6 +21,8 @@
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
@@ -245,7 +247,7 @@ body {
 .value-icon {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, var(--accent), #ff6b35);
+  background: linear-gradient(135deg, var(--accent), #ff3c00);
   border-radius: 50%;
   margin: 0 auto 16px;
   display: flex;
@@ -268,7 +270,7 @@ body {
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, var(--accent), #ff6b35);
+  background: linear-gradient(135deg, var(--accent), #ff3c00);
   padding: 80px 0;
   text-align: center;
   border-radius: var(--radius);
@@ -278,7 +280,7 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   font-size: clamp(32px, 4vw, 48px);
   font-weight: 700;
-  color: #fff;
+  color: #f7f7f7;
   margin-bottom: 24px;
 }
 .cta-text {
@@ -291,7 +293,7 @@ body {
 }
 .cta-button {
   display: inline-block;
-  background: #fff;
+  background: #f7f7f7;
   color: var(--accent);
   padding: 16px 32px;
   border-radius: var(--radius);
@@ -360,6 +362,29 @@ footer {
     text-align: center;
   }
 }
+
+/* Stuga heading font */
+:root { --font-heading: 'DynaPuff', system-ui, sans-serif; }
+h1, h2, h3,
+.logo h1,
+.card-title,
+.title,
+.title-mid,
+.title-small,
+.section-title,
+.hero-title,
+.tool-name,
+.value-title,
+.cta-title,
+.support-title,
+.contact-title,
+.empty-state h2,
+.export-panel h3,
+.sidebar-label {
+  font-family: var(--font-heading) !important;
+  font-weight: 700;
+  letter-spacing: 0 !important;
+}
 </style>
 </head>
 <body>
@@ -410,25 +435,25 @@ footer {
       
       <div class="tools-grid">
         <div class="tool-card">
-          <div class="tool-icon">🃏</div>
+          <div class="tool-icon">ðŸƒ</div>
           <h3 class="tool-name">Card Studio</h3>
           <p class="tool-description">Create stunning animated card galleries and video reels perfect for social media, portfolios, and presentations.</p>
         </div>
         
         <div class="tool-card">
-          <div class="tool-icon">🎬</div>
+          <div class="tool-icon">ðŸŽ¬</div>
           <h3 class="tool-name">Reel Studio</h3>
           <p class="tool-description">Design beautiful 9:16 photo reels and Instagram videos with professional animations and transitions.</p>
         </div>
         
         <div class="tool-card">
-          <div class="tool-icon">⏱️</div>
+          <div class="tool-icon">â±ï¸</div>
           <h3 class="tool-name">Countdown Studio</h3>
           <p class="tool-description">Create professional countdown timers and number reveals for videos, presentations, and live events.</p>
         </div>
         
         <div class="tool-card">
-          <div class="tool-icon">🖥️</div>
+          <div class="tool-icon">ðŸ–¥ï¸</div>
           <h3 class="tool-name">Screen Reel Studio</h3>
           <p class="tool-description">Showcase your work with animated web galleries and screen presentations perfect for portfolios.</p>
         </div>
@@ -442,25 +467,25 @@ footer {
       
       <div class="values-grid">
         <div class="value-item">
-          <div class="value-icon">🎯</div>
+          <div class="value-icon">ðŸŽ¯</div>
           <h3 class="value-title">Focus on Users</h3>
           <p class="value-description">Every feature we build starts with understanding our users' needs and solving real problems.</p>
         </div>
         
         <div class="value-item">
-          <div class="value-icon">🚀</div>
+          <div class="value-icon">ðŸš€</div>
           <h3 class="value-title">Innovation First</h3>
           <p class="value-description">We push the boundaries of what's possible in web browsers to deliver powerful creative tools.</p>
         </div>
         
         <div class="value-item">
-          <div class="value-icon">🎨</div>
+          <div class="value-icon">ðŸŽ¨</div>
           <h3 class="value-title">Quality Matters</h3>
           <p class="value-description">We obsess over every detail to ensure our tools deliver professional, studio-quality results.</p>
         </div>
         
         <div class="value-item">
-          <div class="value-icon">🌍</div>
+          <div class="value-icon">ðŸŒ</div>
           <h3 class="value-title">Accessible to All</h3>
           <p class="value-description">We believe great creative tools should be available to everyone, regardless of budget or technical skills.</p>
         </div>
@@ -489,7 +514,7 @@ footer {
       </div>
     </div>
     <div class="footer-copyright">
-      © 2024 Stuga Studio. All rights reserved.
+      Â© 2024 Stuga Studio. All rights reserved.
     </div>
   </div>
 </footer>

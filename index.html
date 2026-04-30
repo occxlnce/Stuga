@@ -21,6 +21,8 @@
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/dgwtaivvf/image/upload/v1777456093/Stuga-Master_hxmuqu.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
@@ -60,6 +62,7 @@
   --red: #ff3c00;
   --green: #ff3c00;
   --mint: #ff3c00;
+  --secondary: #ff8904;
   --muted: rgba(26, 26, 26, 0.58);
   --radius: 18px;
   --gap: 14px;
@@ -147,12 +150,6 @@ a { color: inherit; text-decoration: none; }
 .tile:hover .bubble.out {
   animation-delay: 0.5s;
 }
-.tile:hover .avatar {
-  animation: pulse 2s ease-in-out infinite;
-}
-.tile:hover .avatar.active {
-  animation-delay: 0.3s;
-}
 .tile:hover .sync-word {
   animation: glow 2s ease-in-out infinite;
 }
@@ -219,10 +216,142 @@ a { color: inherit; text-decoration: none; }
 }
 .muted { color: var(--muted); }
 .red .muted, .green .muted, .dark .muted { color: rgba(247,247,247,0.72); }
+.hero {
+  background: var(--paper);
+  color: var(--ink);
+  transition: background 180ms ease, color 180ms ease;
+}
 .hero .title { color: var(--red); display: grid; grid-template-columns: auto auto; gap: 0 26px; align-items: end; }
+.hero.hero-red {
+  background: var(--red);
+  color: var(--paper);
+}
+.hero.hero-red .eyebrow,
+.hero.hero-red .title,
+.hero.hero-red .tool-line {
+  color: var(--paper);
+}
+.hero.hero-yellow {
+  background: var(--secondary);
+  color: var(--ink);
+}
+.hero.hero-yellow .eyebrow,
+.hero.hero-yellow .title,
+.hero.hero-yellow .tool-line {
+  color: var(--ink);
+}
 .hero .title span:nth-child(1) { grid-column: 1 / 3; }
 .hero .title span:nth-child(2) { grid-column: 1; }
 .hero .title span:nth-child(3) { grid-column: 2; }
+.ribbon-wrap {
+  position: absolute;
+  inset: -12%;
+  z-index: 5;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ribbon {
+  position: absolute;
+  border-radius: 4px;
+  opacity: 0;
+  --from: translateX(-120%);
+  --mid: translateX(0);
+  --to: translateX(120%);
+  transform: var(--from);
+  transform-origin: center;
+  animation: ribbonMove 3s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #ffffff;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff3c00,
+    #ff3c00 20px,
+    #1a1a1a 20px,
+    #1a1a1a 40px
+  );
+  border: 2px solid #ff3c00;
+}
+.ribbon::before {
+  content: "STUGA LINE DO NOT CROSS STUGA LINE DO NOT CROSS STUGA LINE DO NOT CROSS";
+  position: absolute;
+  white-space: nowrap;
+  animation: textScroll 8s linear infinite;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+}
+.ribbon:nth-child(1) {
+  left: -18%;
+  top: 14%;
+  width: 136%;
+  height: 13%;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff3c00,
+    #ff3c00 20px,
+    #1a1a1a 20px,
+    #1a1a1a 40px
+  );
+}
+.ribbon:nth-child(2) {
+  --from: translateX(120%);
+  --mid: translateX(0);
+  --to: translateX(-120%);
+  left: -18%;
+  bottom: 14%;
+  width: 136%;
+  height: 13%;
+  background: repeating-linear-gradient(
+    -45deg,
+    #ff3c00,
+    #ff3c00 20px,
+    #1a1a1a 20px,
+    #1a1a1a 40px
+  );
+  animation-delay: 0.25s;
+}
+.ribbon:nth-child(3) {
+  --from: rotate(-10deg) translateX(-120%);
+  --mid: rotate(-10deg) translateX(0);
+  --to: rotate(-10deg) translateX(120%);
+  left: -22%;
+  top: 42%;
+  width: 150%;
+  height: 11%;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff3c00,
+    #ff3c00 20px,
+    #1a1a1a 20px,
+    #1a1a1a 40px
+  );
+  animation-delay: 1s;
+}
+.ribbon:nth-child(4) {
+  --from: rotate(10deg) translateX(120%);
+  --mid: rotate(10deg) translateX(0);
+  --to: rotate(10deg) translateX(-120%);
+  left: -22%;
+  top: 52%;
+  width: 150%;
+  height: 10%;
+  background: repeating-linear-gradient(
+    -45deg,
+    #ff3c00,
+    #ff3c00 20px,
+    #1a1a1a 20px,
+    #1a1a1a 40px
+  );
+  animation-delay: 1.25s;
+}
 .faces {
   position: absolute;
   right: 8%;
@@ -287,6 +416,69 @@ a { color: inherit; text-decoration: none; }
   transform: rotate(-18deg);
   opacity: 0.9;
 }
+.screen-marquee {
+  position: absolute;
+  inset: 58px 0 70px;
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  overflow: hidden;
+}
+.marquee-row {
+  display: flex;
+  width: max-content;
+  gap: 14px;
+  animation: marqueeRight 12s linear infinite;
+  margin-left: calc(-50% - 7px);
+}
+.marquee-row:nth-child(2) {
+  animation-name: marqueeLeft;
+  animation-duration: 15s;
+  animation-delay: -4s;
+  margin-left: -70px;
+}
+.marquee-row:nth-child(3) {
+  animation-duration: 13s;
+  animation-delay: -2s;
+}
+.screen-card {
+  width: clamp(92px, 10vw, 150px);
+  aspect-ratio: 16 / 10;
+  flex: 0 0 auto;
+  border: 3px solid var(--paper);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, var(--paper) 0 18%, transparent 18%),
+    var(--red);
+  position: relative;
+}
+.screen-card::before,
+.screen-card::after {
+  content: "";
+  position: absolute;
+  background: var(--paper);
+}
+.screen-card::before {
+  left: 18%;
+  right: 12%;
+  top: 24%;
+  height: 3px;
+}
+.screen-card::after {
+  left: 18%;
+  right: 30%;
+  bottom: 24%;
+  height: 3px;
+}
+@keyframes marqueeLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 7px)); }
+}
+@keyframes marqueeRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(50% + 7px)); }
+}
 .mini-card {
   width: min(78%, 250px);
   aspect-ratio: 0.85;
@@ -306,32 +498,98 @@ a { color: inherit; text-decoration: none; }
   font-size: 12px;
   font-weight: 700;
 }
-.sync-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  min-height: 100%;
+.sync {
+  overflow: hidden;
 }
-.sync-logo {
-  width: 62px;
-  height: 48px;
-  background: var(--red);
-  border-radius: 0 22px 22px 0;
-  position: relative;
+.gallery-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
-.sync-logo::before {
+.gallery-slide {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(96px, 12vw, 152px);
+  aspect-ratio: 1.35;
+  display: grid;
+  place-items: center;
+  border: 3px solid var(--red);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--red);
+  font-family: var(--font-heading, "DynaPuff", system-ui, sans-serif);
+  font-size: clamp(19px, 2vw, 32px);
+  font-weight: 700;
+  animation: galleryCenterSpin 15s cubic-bezier(0.55, 0, 0.25, 1) infinite;
+  opacity: 0;
+  transform-origin: center;
+}
+.gallery-slide::before {
   content: "";
   position: absolute;
-  inset: 0 22px 0 -1px;
-  background: var(--paper);
-  border-radius: 0 22px 22px 0;
+  left: 14px;
+  top: 14px;
+  width: 24%;
+  height: 22%;
+  border-radius: 999px;
+  background: var(--red);
 }
-.sync-word {
-  color: var(--red);
-  font-size: clamp(42px, 5vw, 70px);
-  font-weight: 900;
-  line-height: 0.8;
+.gallery-slide::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 42%;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--red);
+}
+.gallery-slide:nth-child(2) {
+  animation-delay: 3s;
+  background: var(--red);
+  color: var(--paper);
+}
+.gallery-slide:nth-child(2)::before,
+.gallery-slide:nth-child(2)::after {
+  background: var(--paper);
+}
+.gallery-slide:nth-child(3) { animation-delay: 6s; }
+.gallery-slide:nth-child(4) {
+  animation-delay: 9s;
+  background: var(--red);
+  color: var(--paper);
+}
+.gallery-slide:nth-child(4)::before,
+.gallery-slide:nth-child(4)::after {
+  background: var(--paper);
+}
+.gallery-slide:nth-child(5) { animation-delay: 12s; }
+@keyframes galleryCenterSpin {
+  0% {
+    opacity: 0;
+    transform: translate(120%, -50%) scale(0.92) rotate(0deg);
+  }
+  4% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.28) rotate(360deg);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(360deg);
+  }
+  20% {
+    opacity: 0;
+    transform: translate(-220%, -50%) scale(0.92) rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-220%, -50%) scale(0.92) rotate(360deg);
+  }
 }
 .people {
   position: absolute;
@@ -368,6 +626,85 @@ a { color: inherit; text-decoration: none; }
 .person:nth-child(1) { background: #ff3c00; }
 .person:nth-child(2) { height: 112%; }
 .person:nth-child(3) { background: var(--red); }
+.flash-gallery {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 7%;
+  height: 46%;
+  z-index: 2;
+}
+.flash-slide {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: clamp(118px, 17vw, 210px);
+  aspect-ratio: 0.78;
+  display: grid;
+  place-items: center;
+  border: 5px solid var(--ink);
+  border-radius: 8px 8px 0 0;
+  background: var(--paper);
+  color: var(--red);
+  font-family: var(--font-heading, "DynaPuff", system-ui, sans-serif);
+  font-size: clamp(24px, 3vw, 44px);
+  font-weight: 700;
+  opacity: 0;
+  transform: translateX(-50%) translateY(18px) scale(0.72) rotate(-3deg);
+  animation: flashSlideShow 6s steps(1, end) infinite;
+}
+.flash-slide::before {
+  content: "";
+  position: absolute;
+  left: 22%;
+  right: 22%;
+  top: 34%;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--ink);
+}
+.flash-slide:nth-child(2) {
+  animation-delay: 2s;
+  background: var(--red);
+  color: var(--paper);
+  transform: translateX(-50%) translateY(18px) scale(0.72) rotate(2deg);
+}
+.flash-slide:nth-child(3) {
+  animation-delay: 4s;
+  transform: translateX(-50%) translateY(18px) scale(0.72) rotate(4deg);
+}
+@keyframes flashSlideShow {
+  0% {
+    opacity: 0;
+    filter: none;
+    transform: translateX(-50%) translateY(18px) scale(0.72) rotate(-3deg);
+  }
+  8% {
+    opacity: 1;
+    filter: brightness(1.18);
+    transform: translateX(-50%) translateY(0) scale(1.08) rotate(0deg);
+  }
+  16% {
+    opacity: 1;
+    filter: none;
+    transform: translateX(-50%) translateY(0) scale(1) rotate(0deg);
+  }
+  28% {
+    opacity: 1;
+    filter: none;
+    transform: translateX(-50%) translateY(0) scale(1) rotate(0deg);
+  }
+  34% {
+    opacity: 0;
+    filter: brightness(1.18);
+    transform: translateX(-50%) translateY(-14px) scale(0.9) rotate(3deg);
+  }
+  100% {
+    opacity: 0;
+    filter: none;
+    transform: translateX(-50%) translateY(-14px) scale(0.9) rotate(3deg);
+  }
+}
 .bubble {
   display: inline-flex;
   align-items: center;
@@ -382,23 +719,58 @@ a { color: inherit; text-decoration: none; }
 }
 .bubble.in { background: var(--red); color: var(--paper); align-self: flex-start; }
 .bubble.out { background: var(--red); color: var(--red); align-self: flex-end; margin-top: 8px; }
-.avatar-row {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  justify-content: center;
+.countdown-cover {
   position: relative;
   z-index: 2;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.avatar {
-  width: clamp(44px, 4.5vw, 70px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--paper);
-  border: 3px solid rgba(247,247,247,0.6);
+.countdown-number {
+  min-width: clamp(118px, 13vw, 180px);
+  height: clamp(72px, 8vw, 112px);
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--font-heading, "DynaPuff", system-ui, sans-serif);
+  font-size: clamp(44px, 7vw, 86px);
+  line-height: 1;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.countdown-number.tick {
+  animation: countPop 260ms ease;
+}
+@keyframes countPop {
+  0% { transform: scale(0.92); }
+  70% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+.stack-stage {
   position: relative;
+  z-index: 2;
+  height: clamp(112px, 16vw, 190px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 }
-.avatar::before, .avatar::after {
+.stack-card {
+  position: absolute;
+  --stack-x: 0px;
+  --stack-y: 0px;
+  width: clamp(54px, 5vw, 78px);
+  aspect-ratio: 1;
+  border-radius: 8px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  box-shadow: none;
+  animation: stackLoop 6s ease-in-out infinite;
+  opacity: 0;
+}
+.stack-card::before, .stack-card::after {
   content: "";
   position: absolute;
   top: 38%;
@@ -407,9 +779,11 @@ a { color: inherit; text-decoration: none; }
   border-radius: 50%;
   background: var(--ink);
 }
-.avatar::before { left: 31%; }
-.avatar::after { right: 31%; }
-.avatar.active { background: var(--red); outline: 4px solid rgba(247,247,247,0.35); }
+.stack-card::before { left: 31%; }
+.stack-card::after { right: 31%; }
+.stack-card:nth-child(1) { --stack-x: -10px; --stack-y: 10px; animation-delay: 0s; z-index: 1; }
+.stack-card:nth-child(2) { --stack-x: 0px; --stack-y: 0px; animation-delay: 0.6s; background: var(--red); z-index: 2; }
+.stack-card:nth-child(3) { --stack-x: 10px; --stack-y: -10px; animation-delay: 1.2s; z-index: 3; }
 .mono-chip {
   align-self: center;
   background: #1a1a1a;
@@ -494,6 +868,42 @@ a { color: inherit; text-decoration: none; }
   color: #ff3c00;
 }
 
+/* Reel Card Isometric Animation */
+.tile.reel {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.tile.reel .mini-card {
+  transform-style: preserve-3d;
+  animation: isometricLoop 8s ease-in-out infinite;
+}
+@keyframes isometricLoop {
+  0%, 100% {
+    transform: rotateX(0deg) rotateY(0deg) translateZ(0deg);
+  }
+  25% {
+    transform: rotateX(-30deg) rotateY(45deg) translateZ(20px);
+  }
+  50% {
+    transform: rotateX(-30deg) rotateY(45deg) translateZ(30px) scale(1.1);
+  }
+  75% {
+    transform: rotateX(-30deg) rotateY(45deg) translateZ(20px);
+  }
+}
+.tile.reel .mini-row {
+  transform-style: preserve-3d;
+  transform: translateZ(10px);
+}
+.tile.reel .title-small {
+  transform-style: preserve-3d;
+  transform: translateZ(15px);
+}
+.tile.reel .meta {
+  transform-style: preserve-3d;
+  transform: translateZ(5px);
+}
+
 /* Continuous microinteractions */
 .faces {
   animation: float 4s ease-in-out infinite;
@@ -507,12 +917,8 @@ a { color: inherit; text-decoration: none; }
 .face:nth-child(3) {
   animation-delay: 1s;
 }
-.handshake {
-  animation: shake 3s ease-in-out infinite;
-}
-.shake-lines {
-  animation: rotate 8s linear infinite;
-}
+.handshake { animation: shake 3s ease-in-out infinite; }
+.shake-lines { animation: rotate 8s linear infinite; }
 .people {
   animation: wave 3s ease-in-out infinite;
 }
@@ -530,12 +936,6 @@ a { color: inherit; text-decoration: none; }
 }
 .bubble.out {
   animation-delay: 1s;
-}
-.avatar {
-  animation: pulse 3s ease-in-out infinite;
-}
-.avatar.active {
-  animation-delay: 0.5s;
 }
 .sync-word {
   animation: glow 3s ease-in-out infinite;
@@ -585,6 +985,35 @@ a { color: inherit; text-decoration: none; }
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.1); opacity: 0.8; }
 }
+@keyframes stackLoop {
+  0% { opacity: 0; transform: translate(var(--stack-x), -170%) scale(0.92); }
+  10% { opacity: 1; transform: translate(var(--stack-x), var(--stack-y)) scale(1); }
+  56% { opacity: 1; transform: translate(var(--stack-x), var(--stack-y)) scale(1); }
+  70% { opacity: 1; transform: translate(var(--stack-x), 170%) scale(0.96); }
+  71%, 100% { opacity: 0; transform: translate(var(--stack-x), 170%) scale(0.96); }
+}
+@keyframes ribbonWrap {
+  0% {
+    opacity: 0;
+    transform: var(--from);
+  }
+  10% {
+    opacity: 1;
+    transform: var(--mid);
+  }
+  43% {
+    opacity: 1;
+    transform: var(--mid);
+  }
+  58% {
+    opacity: 0;
+    transform: var(--to);
+  }
+  100% {
+    opacity: 0;
+    transform: var(--to);
+  }
+}
 @keyframes glow {
   0%, 100% { text-shadow: 0 0 5px rgba(255,60,0,0.5); }
   50% { text-shadow: 0 0 20px rgba(255,60,0,0.8), 0 0 30px rgba(255,60,0,0.6); }
@@ -596,6 +1025,10 @@ a { color: inherit; text-decoration: none; }
 @keyframes slide {
   0%, 100% { transform: translateX(0px); }
   50% { transform: translateX(3px); }
+}
+@keyframes textScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @media (max-width: 980px) {
@@ -620,6 +1053,8 @@ a { color: inherit; text-decoration: none; }
   .hero { min-height: 330px; }
   .showreel { min-height: 360px; }
   .title { font-size: clamp(46px, 17vw, 82px); }
+  .countdown-cover { align-items: center; }
+  .countdown-number { width: 100%; min-width: 0; }
 }
 
 /* Stuga minimalist theme */
@@ -630,6 +1065,7 @@ a { color: inherit; text-decoration: none; }
   --red: #ff3c00;
   --green: #ff3c00;
   --mint: #ff3c00;
+  --secondary: #ff3c00;
   --muted: rgba(26, 26, 26, 0.58);
   --radius: 8px;
 }
@@ -640,11 +1076,34 @@ body { background: #f7f7f7; color: #1a1a1a; }
 .tile:hover { transform: translateY(-2px); outline-color: #ff3c00; filter: none; }
 .face,
 .person,
-.avatar,
+.stack-card,
 .mini-card,
 .bubble,
 .mono-chip { box-shadow: none; border-color: #1a1a1a; border-radius: 8px; }
 .pill { border-color: currentColor; border-radius: 999px; }
+
+/* Stuga heading font */
+:root { --font-heading: 'DynaPuff', system-ui, sans-serif; }
+h1, h2, h3,
+.logo h1,
+.card-title,
+.title,
+.title-mid,
+.title-small,
+.section-title,
+.hero-title,
+.tool-name,
+.value-title,
+.cta-title,
+.support-title,
+.contact-title,
+.empty-state h2,
+.export-panel h3,
+.sidebar-label {
+  font-family: var(--font-heading) !important;
+  font-weight: 700;
+  letter-spacing: 0 !important;
+}
 </style>
 </head>
 <body>
@@ -662,11 +1121,19 @@ body { background: #f7f7f7; color: #1a1a1a; }
 
 <main class="bento-shell" aria-label="Stuga UI tools">
   <a class="tile hero cream" href="project-teaser-studio.html" aria-label="Open Project Teaser Studio">
-    <div class="eyebrow">Stuga / Project Teaser</div>
+    <div class="ribbon-wrap" aria-hidden="true">
+      <span class="ribbon"></span>
+      <span class="ribbon"></span>
+      <span class="ribbon"></span>
+      <span class="ribbon"></span>
+      <span class="ribbon"></span>
+      <span class="ribbon"></span>
+    </div>
+    <div class="eyebrow">Reel Showcase</div>
     <h1 class="title">
-      <span>better</span>
-      <span>now</span>
-      <span>closer</span>
+      <span>Case</span>
+      <span>Study</span>
+      <span>Teaser</span>
     </h1>
     <div class="faces" aria-hidden="true">
       <span class="face"><i></i></span>
@@ -680,52 +1147,91 @@ body { background: #f7f7f7; color: #1a1a1a; }
     </div>
   </a>
 
-  <a class="tile screen green" href="screen-reel-studio.html" aria-label="Open Screen Reel Studio">
+  <a class="tile screen red" href="screen-reel-studio.html" aria-label="Open Screen Reel Studio">
     <div class="eyebrow">Screen Reel</div>
-    <div class="handshake" aria-hidden="true"><span class="shake-lines"></span></div>
+    <div class="screen-marquee" aria-hidden="true">
+      <div class="marquee-row">
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+      </div>
+      <div class="marquee-row">
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+      </div>
+      <div class="marquee-row">
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+        <span class="screen-card"></span>
+      </div>
+    </div>
     <div class="meta">website and app screens in motion</div>
   </a>
 
   <a class="tile reel red" href="reel-studio.html" aria-label="Open Reel Studio">
     <div class="mini-card">
       <div class="mini-row"><span>24 Mar</span><span>09:00-10:00</span></div>
-      <div class="title-small">Reel<br>Adaptation</div>
+      <div class="title-small">Photo<br>Reels</div>
       <div class="meta">story grooming</div>
     </div>
     <div class="meta">vertical, square, or any canvas</div>
   </a>
 
   <a class="tile sync paper" href="card-studio.html" aria-label="Open Card Studio">
-    <div class="sync-mark">
-      <span class="sync-logo" aria-hidden="true"></span>
-      <span class="sync-word">card</span>
+    <div class="gallery-slider" aria-hidden="true">
+      <span class="gallery-slide">card</span>
+      <span class="gallery-slide">cover</span>
+      <span class="gallery-slide">story</span>
+      <span class="gallery-slide">post</span>
+      <span class="gallery-slide">frame</span>
     </div>
   </a>
 
   <a class="tile showreel paper" href="showreel-studio.html" aria-label="Open Showreel Studio">
     <div>
-      <div class="title-mid" style="color:var(--red)">Bring People<br>Together</div>
-      <div class="meta" style="color:var(--red); margin-top:18px">[ showreel.com ]</div>
+      <div class="title-mid" style="color:var(--red)">Stacked Cut <br>Reel</div>
+      
     </div>
-    <div class="people" aria-hidden="true">
-      <span class="person"></span>
-      <span class="person"></span>
-      <span class="person"></span>
+    <div class="flash-gallery" aria-hidden="true">
+      <span class="flash-slide">01</span>
+      <span class="flash-slide">02</span>
+      <span class="flash-slide">03</span>
     </div>
   </a>
 
   <a class="tile countdown cream" href="countdown-studio.html" aria-label="Open Countdown Studio">
-    <div class="bubble in">Hi! Where are you?</div>
-    <div class="bubble out">I'll be in touch</div>
-    <div class="meta muted">Countdown Studio</div>
+    <div class="countdown-cover">
+      <div class="countdown-number" id="countdown-cover-number" aria-live="polite">10</div>
+    </div>
   </a>
 
   <a class="tile slideshow green" href="slideshow-loop-studio.html" aria-label="Open Slideshow Loop Studio">
-    <div class="mono-chip">I'll be in touch</div>
-    <div class="avatar-row" aria-hidden="true">
-      <span class="avatar"></span>
-      <span class="avatar active"></span>
-      <span class="avatar"></span>
+    <div class="stack-stage" aria-hidden="true">
+      <span class="stack-card"></span>
+      <span class="stack-card"></span>
+      <span class="stack-card"></span>
     </div>
     <div class="meta">looping photo stories</div>
   </a>
@@ -742,6 +1248,29 @@ document.querySelectorAll('.tile').forEach((tile, index) => {
     }, index * 55);
   });
 });
+
+const heroTile = document.querySelector('.hero');
+const heroColorStates = ['', 'hero-red', 'hero-yellow'];
+let heroColorIndex = 0;
+if (heroTile) {
+  setInterval(() => {
+    heroColorIndex = (heroColorIndex + 1) % heroColorStates.length;
+    heroTile.classList.remove('hero-red', 'hero-yellow');
+    if (heroColorStates[heroColorIndex]) {
+      heroTile.classList.add(heroColorStates[heroColorIndex]);
+    }
+  }, 6000);
+}
+
+const countdownCoverNumber = document.getElementById('countdown-cover-number');
+let countdownCoverValue = 10;
+setInterval(() => {
+  countdownCoverValue = countdownCoverValue === 0 ? 10 : countdownCoverValue - 1;
+  countdownCoverNumber.textContent = countdownCoverValue;
+  countdownCoverNumber.classList.remove('tick');
+  void countdownCoverNumber.offsetWidth;
+  countdownCoverNumber.classList.add('tick');
+}, 1000);
 </script>
 </body>
 </html>
